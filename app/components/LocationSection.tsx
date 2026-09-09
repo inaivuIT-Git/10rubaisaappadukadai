@@ -1,43 +1,31 @@
+import "../styles/LocationSection.css";
+
 export default function LocationSection() {
   return (
-    <section
-      id="location"
-      className="relative overflow-hidden bg-[#EAF4FB] px-5 py-20 sm:py-24"
-    >
+    <section id="location" className="location-section">
 
-      {/* Decorative background */}
-      <div className="pointer-events-none absolute -right-32 top-10 h-72 w-72 rounded-full bg-white/60 blur-3xl" />
+      <div className="location-glow location-glow-right" />
+      <div className="location-glow location-glow-left" />
 
-      <div className="pointer-events-none absolute -left-32 bottom-10 h-80 w-80 rounded-full bg-[#F7C928]/10 blur-3xl" />
-
-
-      <div className="relative mx-auto max-w-7xl">
-
+      <div className="location-container">
 
         {/* =====================================================
-            SECTION HEADER
+            HEADER
         ====================================================== */}
 
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="location-header">
 
-          <span className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-bold text-[#155A91] shadow-sm ring-1 ring-[#D9E7F0]">
+          <div className="location-label">
             📍 எங்களை சந்திக்க
-          </span>
+          </div>
 
-
-          <h2 className="mt-5 text-4xl font-black leading-tight text-[#155A91] sm:text-5xl">
-
+          <h2 className="location-title">
             எங்கள் கடைக்கு
             <br />
-
-            <span className="text-[#17324D]">
-              வாருங்கள் ❤️
-            </span>
-
+            <span>வாருங்கள் ❤️</span>
           </h2>
 
-
-          <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-[#5B6670] sm:text-lg">
+          <p className="location-description">
             நேரில் வந்து சுவையான உணவை ₹10-க்கு
             சாப்பிட்டு மகிழுங்கள்.
           </p>
@@ -49,14 +37,13 @@ export default function LocationSection() {
             MAP
         ====================================================== */}
 
-        <div className="mt-12 overflow-hidden rounded-[2rem] border border-white bg-white p-2 shadow-xl">
+        <div className="location-map-card">
 
-          <div className="h-[350px] overflow-hidden rounded-[1.5rem] bg-gray-200 sm:h-[450px]">
+          <div className="location-map-wrapper">
 
             <iframe
               title="10 ரூபாய் சாப்பாட்டுக்கடை Location"
               src="https://www.google.com/maps?q=Salem,Tamil%20Nadu&output=embed"
-              className="h-full w-full border-0"
               loading="lazy"
             />
 
@@ -66,32 +53,30 @@ export default function LocationSection() {
 
 
         {/* =====================================================
-            LOCATION DETAILS
+            DETAILS
         ====================================================== */}
 
-        <div className="mx-auto mt-6 max-w-5xl rounded-[2rem] bg-white p-6 shadow-lg sm:p-8">
+        <div className="location-details-card">
 
-          <div className="grid gap-8 md:grid-cols-[1.4fr_1fr]">
-
+          <div className="location-details-grid">
 
             {/* ADDRESS */}
 
-            <div>
+            <div className="location-address">
 
-              <div className="flex items-start gap-4">
+              <div className="location-address-row">
 
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#EAF4FB] text-xl">
+                <div className="location-icon">
                   📍
                 </div>
 
-
                 <div>
 
-                  <p className="text-lg font-black text-[#155A91]">
+                  <h3>
                     எங்கள் முகவரி
-                  </p>
+                  </h3>
 
-                  <p className="mt-2 text-sm leading-7 text-[#5B6670] sm:text-base">
+                  <p>
                     79/1, 20/2, நரசிம்மன் சாலை,
                     <br />
                     சித்தர் காலியம்மன் கோவில் அருகில்,
@@ -104,13 +89,11 @@ export default function LocationSection() {
               </div>
 
 
-              {/* Direction Button */}
-
               <a
                 href="https://www.google.com/maps"
                 target="_blank"
                 rel="noreferrer"
-                className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[#155A91] px-7 py-3.5 text-sm font-bold text-white shadow-md transition hover:bg-[#124C7A]"
+                className="location-direction-button"
               >
                 📍 Google Maps-ல் வழியைப் பார்க்க
               </a>
@@ -120,22 +103,19 @@ export default function LocationSection() {
 
             {/* INFO */}
 
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-2">
+            <div className="location-info-grid">
 
+              <div className="location-info-card">
 
-              {/* Timing */}
-
-              <div className="rounded-2xl bg-[#F7F5F0] p-5">
-
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F7C928]">
+                <div className="location-info-icon">
                   🕐
                 </div>
 
-                <p className="mt-4 text-sm font-black text-[#155A91]">
+                <h4>
                   நேரம்
-                </p>
+                </h4>
 
-                <p className="mt-1 text-xs leading-5 text-[#5B6670]">
+                <p>
                   தினமும்
                   <br />
                   மதியம் 12:00 – 3:00
@@ -144,29 +124,21 @@ export default function LocationSection() {
               </div>
 
 
-              {/* Phone */}
+              <div className="location-info-card">
 
-              <div className="rounded-2xl bg-[#F7F5F0] p-5">
-
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F7C928]">
+                <div className="location-info-icon">
                   📞
                 </div>
 
-                <p className="mt-4 text-sm font-black text-[#155A91]">
+                <h4>
                   தொடர்பு
-                </p>
+                </h4>
 
-                <a
-                  href="tel:+919087737879"
-                  className="mt-1 block text-xs font-bold leading-5 text-[#1769A8]"
-                >
-                  +91
-                  <br />
-                  90877 37879
+                <a href="tel:+919087737879">
+                  +91 90877 37879
                 </a>
 
               </div>
-
 
             </div>
 
@@ -179,15 +151,15 @@ export default function LocationSection() {
             BOTTOM MESSAGE
         ====================================================== */}
 
-        <div className="mt-8 text-center">
+        <div className="location-bottom">
 
-          <div className="inline-flex items-center gap-3 rounded-full bg-white px-6 py-3 shadow-sm">
+          <div className="location-bottom-message">
 
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F7C928]">
+            <span>
               🍚
             </span>
 
-            <p className="text-sm font-bold text-[#17324D] sm:text-base">
+            <p>
               உங்கள் வருகைக்காக காத்திருக்கிறோம் ❤️
             </p>
 
@@ -195,9 +167,7 @@ export default function LocationSection() {
 
         </div>
 
-
       </div>
-
     </section>
   );
 }

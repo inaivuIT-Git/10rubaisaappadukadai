@@ -1,0 +1,270 @@
+/* =====================================================
+   HEADER
+===================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  width: 100%;
+
+  background: var(--green-primary);
+  color: var(--white);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =====================================================
+   HEADER CONTAINER
+===================================================== */
+
+.header-container {
+  width: 100%;
+  max-width: 1280px;
+  height: 80px;
+
+  margin: 0 auto;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+}
+
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.header-brand {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  flex-shrink: 0;
+
+  text-decoration: none;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.header-logo {
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: var(--green-light);
+
+  border-radius: 50%;
+}
+
+.header-logo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+
+/* =====================================================
+   BRAND CONTENT
+===================================================== */
+
+.header-brand-content {
+  line-height: 1.15;
+}
+
+.header-brand-content h1 {
+  margin: 0;
+
+  color: var(--white);
+
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.header-brand-name {
+  margin: 2px 0 0;
+
+  color: var(--green-light);
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.header-tagline {
+  margin: 3px 0 0;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 10px;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.header-nav {
+  display: flex;
+  align-items: center;
+
+  gap: 28px;
+}
+
+.header-nav a {
+  color: var(--white);
+
+  font-size: 15px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.header-nav a:hover {
+  color: var(--accent-yellow);
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   CONTACT BUTTON
+===================================================== */
+
+.header-contact-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  flex-shrink: 0;
+
+  padding: 12px 22px;
+
+  background: var(--green-dark);
+  color: var(--white);
+
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.header-contact-button:hover {
+  background: var(--green-deep);
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+}
+
+
+/* =====================================================
+   MOBILE MENU BUTTON
+===================================================== */
+
+.header-mobile-button {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  background: var(--green-light);
+  color: var(--green-dark);
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  font-size: 20px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1023px) {
+
+  .header-nav {
+    display: none;
+  }
+
+  .header-mobile-button {
+    display: flex;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 640px) {
+
+  .header-container {
+    height: 72px;
+
+    padding: 0 16px;
+  }
+
+  .header-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .header-brand-content h1 {
+    font-size: 19px;
+  }
+
+  .header-brand-name {
+    font-size: 13px;
+  }
+
+  .header-tagline {
+    display: none;
+  }
+
+  .header-contact-button {
+    display: none;
+  }
+
+}

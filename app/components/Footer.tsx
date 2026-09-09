@@ -1,36 +1,41 @@
+import "../styles/Footer.css";
+
 export default function Footer() {
   return (
-    <footer className="bg-[#155A91] text-white">
+    <footer className="site-footer">
 
-      {/* Main Footer */}
-      <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-16">
+      {/* =====================================================
+          MAIN FOOTER
+      ====================================================== */}
 
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div className="footer-container">
 
-          {/* Brand */}
-          <div className="lg:col-span-2">
+        <div className="footer-grid">
 
-            <div className="flex items-center gap-3">
+          {/* =================================================
+              BRAND
+          ================================================== */}
 
-              {/* Logo / Icon */}
-              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#F7C928] text-2xl shadow-md">
-                🍚
+          <div className="footer-brand">
+
+            <div className="footer-brand-header">
+
+              <div className="footer-logo">
+                <img
+                  src="/images/logo/logo-square.png"
+                  alt="10 ரூபாய் சாப்பாட்டுக்கடை"
+                />
               </div>
 
-              <div>
-                <div className="text-2xl font-black text-[#F7C928]">
-                  10 ரூபாய்
-                </div>
-
-                <div className="font-bold text-white">
-                  சாப்பாட்டுக்கடை
-                </div>
+              <div className="footer-brand-name">
+                <h2>10 ரூபாய்</h2>
+                <p>சாப்பாட்டுக்கடை</p>
               </div>
 
             </div>
 
 
-            <p className="mt-6 max-w-md text-sm leading-7 text-white/75">
+            <p className="footer-description">
               சுவையான உணவை எளிய விலையில்
               அனைவருக்கும் வழங்க வேண்டும் என்ற
               எண்ணத்துடன் முன்னெடுக்கப்படும்
@@ -38,59 +43,42 @@ export default function Footer() {
             </p>
 
 
-            <p className="mt-4 font-bold text-[#F7C928]">
+            <p className="footer-tagline">
               விலை குறைவு... வயிறு நிறைவு! ❤️
             </p>
 
           </div>
 
 
-          {/* Quick Links */}
-          <div>
+          {/* =================================================
+              QUICK LINKS
+          ================================================== */}
 
-            <h3 className="font-bold text-[#F7C928]">
+          <div className="footer-links">
+
+            <h3>
               விரைவான இணைப்புகள்
             </h3>
 
+            <nav>
 
-            <nav className="mt-5 flex flex-col gap-3 text-sm text-white/75">
-
-              <a
-                href="#"
-                className="transition hover:text-[#F7C928]"
-              >
+              <a href="#home">
                 முகப்பு
               </a>
 
-
-              <a
-                href="#menu"
-                className="transition hover:text-[#F7C928]"
-              >
+              <a href="#menu">
                 எங்கள் உணவு
               </a>
 
-
-              <a
-                href="#about"
-                className="transition hover:text-[#F7C928]"
-              >
+              <a href="#why-10">
                 எங்களைப் பற்றி
               </a>
 
-
-              <a
-                href="#gallery"
-                className="transition hover:text-[#F7C928]"
-              >
+              <a href="#gallery">
                 புகைப்படங்கள்
               </a>
 
-
-              <a
-                href="#location"
-                className="transition hover:text-[#F7C928]"
-              >
+              <a href="#location">
                 எங்களை சந்திக்க
               </a>
 
@@ -99,61 +87,66 @@ export default function Footer() {
           </div>
 
 
-          {/* Contact */}
-          <div>
+          {/* =================================================
+              CONTACT
+          ================================================== */}
 
-            <h3 className="font-bold text-[#F7C928]">
+          <div className="footer-contact">
+
+            <h3>
               தொடர்பு
             </h3>
 
 
-            <div className="mt-5 space-y-4 text-sm text-white/75">
+            <div className="footer-contact-list">
 
-              {/* Address */}
-              <div className="flex gap-3">
+              {/* ADDRESS */}
 
-                <span className="text-lg">
+              <div className="footer-contact-item">
+
+                <div className="footer-contact-icon">
                   📍
-                </span>
+                </div>
 
-                <span>
-                  [முகவரி இங்கே]
+                <p>
+                  79/1, 20/2, நரசிம்மன் சாலை,
                   <br />
-                  [ஊர் / மாவட்டம்]
-                </span>
+                  சித்தர் காலியம்மன் கோவில் அருகில்,
+                  <br />
+                  சேலம் - 636 002.
+                </p>
 
               </div>
 
 
-              {/* Phone */}
-              <div className="flex gap-3">
+              {/* PHONE */}
 
-                <span className="text-lg">
+              <div className="footer-contact-item">
+
+                <div className="footer-contact-icon">
                   📞
-                </span>
+                </div>
 
-                <a
-                  href="tel:+919999999999"
-                  className="transition hover:text-[#F7C928]"
-                >
-                  +91 99999 99999
+                <a href="tel:+919087737879">
+                  +91 90877 37879
                 </a>
 
               </div>
 
 
-              {/* Timing */}
-              <div className="flex gap-3">
+              {/* TIMING */}
 
-                <span className="text-lg">
+              <div className="footer-contact-item">
+
+                <div className="footer-contact-icon">
                   🕐
-                </span>
+                </div>
 
-                <span>
+                <p>
                   தினமும்
                   <br />
-                  காலை 11:00 – பிற்பகல் 3:00
-                </span>
+                  மதியம் 12:00 – 3:00
+                </p>
 
               </div>
 
@@ -166,18 +159,20 @@ export default function Footer() {
       </div>
 
 
-      {/* Bottom Bar */}
-      <div className="border-t border-white/15 bg-[#0F4773]">
+      {/* =====================================================
+          BOTTOM BAR
+      ====================================================== */}
 
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 py-5 text-xs text-white/60 sm:flex-row sm:px-8">
+      <div className="footer-bottom">
+
+        <div className="footer-bottom-container">
 
           <p>
             © {new Date().getFullYear()} 10 ரூபாய் சாப்பாட்டுக்கடை.
             அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.
           </p>
 
-
-          <p className="text-white/70">
+          <p>
             அன்புடன் உருவாக்கப்பட்டது ❤️
           </p>
 

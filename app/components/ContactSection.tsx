@@ -1,133 +1,149 @@
+import "../styles/ContactSection.css";
+
 export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-[#F7F5F0] px-5 py-20 sm:py-24"
+      className="contact-section"
     >
+      <div className="contact-container">
 
-      {/* Decorative background */}
+        {/* =====================================================
+            LEFT CONTENT
+        ===================================================== */}
 
-      <div className="pointer-events-none absolute -left-24 top-10 h-64 w-64 rounded-full bg-[#EAF4FB] blur-3xl" />
+        <div className="contact-content">
 
-      <div className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-[#F7C928]/10 blur-3xl" />
+          <span className="contact-label">
+            ❤️ எங்களுடன் இணையுங்கள்
+          </span>
 
+          <h2 className="contact-title">
+            உங்கள் சிறப்பான நாளை
+            <span>
+              {" "}ஒரு அர்த்தமுள்ள நாளாக மாற்றுங்கள்.
+            </span>
+          </h2>
 
-      <div className="relative mx-auto max-w-4xl text-center">
+          <p className="contact-description">
+            பிறந்தநாள், திருமண நாள், நினைவு நாள்
+            அல்லது உங்கள் வாழ்வின் எந்த சிறப்பான நாளாக இருந்தாலும்,
+            அந்த நாளில் ஒரு வேளை உணவை பகிர்ந்து
+            மற்றொருவரின் முகத்தில் மகிழ்ச்சியை உருவாக்கலாம்.
+          </p>
 
+          <div className="contact-message">
+            <div className="contact-message-icon">
+              🍚
+            </div>
 
-        {/* =========================
-            HEART ICON
-        ========================== */}
+            <div>
+              <span>
+                ஒரு நாள் • ஒரு உணவு • ஒரு நல்ல நினைவு
+              </span>
 
-        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#F7C928] text-2xl shadow-md">
-          ❤️
+              <strong>
+                உங்கள் மகிழ்ச்சியை உணவாக பகிருங்கள்.
+              </strong>
+            </div>
+          </div>
+
         </div>
 
 
-        {/* =========================
-            HEADING
-        ========================== */}
-
-        <h2 className="mt-7 text-4xl font-black leading-tight text-[#155A91] sm:text-5xl">
-
-          ஒரு சிறிய உதவி...
-          <br />
-
-          <span className="text-[#17324D]">
-            ஒரு பெரிய மாற்றம்
-          </span>
-
-        </h2>
-
-
-        {/* =========================
-            DESCRIPTION
-        ========================== */}
-
-        <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-[#5B6670] sm:text-lg">
-
-          அனைவருக்கும் நல்ல உணவு கிடைக்க வேண்டும்
-          <br className="hidden sm:block" />
-          என்பதே எங்கள் முயற்சியின் நோக்கம்.
-
-        </p>
-
-
-        {/* =========================
+        {/* =====================================================
             CONTACT CARD
-        ========================== */}
+        ===================================================== */}
 
-        <div className="mx-auto mt-10 max-w-2xl rounded-[2rem] border border-[#D9E7F0] bg-white p-7 shadow-lg sm:p-10">
+        <div className="contact-card">
 
-
-          <p className="text-lg font-black text-[#17324D] sm:text-xl">
-            இந்த முயற்சியைப் பற்றி தெரிந்துகொள்ள
-          </p>
-
-
-          <p className="mt-2 text-sm leading-6 text-[#5B6670] sm:text-base">
-            அல்லது எங்களுடன் இணைந்து செயல்பட
-            விரும்புகிறீர்களா?
-          </p>
-
-
-          {/* Buttons */}
-
-          <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
-
-
-            {/* Phone */}
-
-            <a
-              href="tel:+919087737879"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#155A91] px-7 py-3.5 font-bold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#124C7A] hover:shadow-lg"
-            >
-              📞 தொடர்பு கொள்ளுங்கள்
-            </a>
-
-
-            {/* WhatsApp */}
-
-            <a
-              href="https://wa.me/919087737879"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-7 py-3.5 font-bold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#1EBE5D] hover:shadow-lg"
-            >
-              💬 WhatsApp
-            </a>
-
+          <div className="contact-card-icon">
+            🤝
           </div>
 
+          <span className="contact-card-label">
+            தொடர்பு கொள்ள
+          </span>
 
-          {/* Phone Number */}
+          <h3>
+            எங்களுடன் இணைந்து
+            உணவு வழங்க விரும்புகிறீர்களா?
+          </h3>
+
+          <p>
+            உங்கள் சிறப்பான நாளில் உணவு வழங்குவது
+            அல்லது இந்த முயற்சியைப் பற்றி மேலும்
+            தெரிந்துகொள்ள எங்களை தொடர்பு கொள்ளுங்கள்.
+          </p>
+
+
+          {/* =================================================
+              PHONE
+          ================================================= */}
 
           <a
             href="tel:+919087737879"
-            className="mt-6 inline-block text-sm font-black text-[#1769A8]"
+            className="contact-phone"
           >
-            +91 90877 37879
+            <span className="contact-action-icon">
+              📞
+            </span>
+
+            <span>
+              <small>
+                அழைக்க
+              </small>
+
+              <strong>
+                +91 90877 37879
+              </strong>
+            </span>
+          </a>
+
+
+          {/* =================================================
+              WHATSAPP
+          ================================================= */}
+
+          <a
+            href="https://wa.me/919087737879"
+            target="_blank"
+            rel="noreferrer"
+            className="contact-whatsapp"
+          >
+            <span className="contact-action-icon">
+              💬
+            </span>
+
+            <span>
+              <small>
+                WhatsApp மூலம்
+              </small>
+
+              <strong>
+                தொடர்பு கொள்ளுங்கள்
+              </strong>
+            </span>
           </a>
 
         </div>
 
+      </div>
 
-        {/* =========================
-            CLOSING MESSAGE
-        ========================== */}
 
-        <div className="mt-10">
+      {/* =====================================================
+          BOTTOM MESSAGE
+      ===================================================== */}
 
-          <p className="text-xl font-black text-[#155A91] sm:text-2xl">
-            விலை குறைவு...
-          </p>
+      <div className="contact-bottom">
 
-          <p className="mt-1 text-2xl font-black text-[#17324D] sm:text-3xl">
-            வயிறு நிறைவு ❤️
-          </p>
+        <p>
+          ஒரு சிறிய பகிர்வு...
+        </p>
 
-        </div>
-
+        <strong>
+          ஒருவரின் பசியை போக்கும் பெரிய உதவி ❤️
+        </strong>
 
       </div>
 

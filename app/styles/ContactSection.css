@@ -1,0 +1,597 @@
+/* =====================================================
+   CONTACT SECTION
+===================================================== */
+
+.contact-section {
+  width: 100%;
+
+  padding: 80px 20px 60px;
+
+  background: var(--green-light);
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.contact-container {
+  width: 100%;
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+
+  align-items: center;
+
+  gap: 70px;
+}
+
+
+/* =====================================================
+   LEFT CONTENT
+===================================================== */
+
+.contact-content {
+  width: 100%;
+}
+
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+.contact-label {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 8px 18px;
+
+  background: var(--white);
+  color: var(--green-primary);
+
+  border: 1px solid var(--green-border);
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  box-shadow:
+    0 3px 10px rgba(45, 112, 55, 0.05);
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.contact-title {
+  max-width: 640px;
+
+  margin: 22px 0 0;
+
+  color: var(--green-dark);
+
+  font-size: clamp(38px, 4vw, 53px);
+  font-weight: 900;
+
+  line-height: 1.45;
+}
+
+.contact-title span {
+  color: var(--green-primary);
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.contact-description {
+  max-width: 650px;
+
+  margin: 22px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 17px;
+  font-weight: 500;
+
+  line-height: 1.95;
+}
+
+
+/* =====================================================
+   SUPPORTING MESSAGE
+===================================================== */
+
+.contact-message {
+  max-width: 620px;
+
+  margin-top: 30px;
+  padding: 20px 22px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  background: rgba(255, 255, 255, 0.65);
+
+  border: 1px solid var(--green-border);
+  border-radius: 18px;
+}
+
+
+/* =====================================================
+   MESSAGE ICON
+===================================================== */
+
+.contact-message-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background: var(--white);
+
+  border-radius: 14px;
+
+  font-size: 23px;
+}
+
+
+/* =====================================================
+   MESSAGE CONTENT
+===================================================== */
+
+.contact-message span {
+  display: block;
+
+  color: var(--text-muted);
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.contact-message strong {
+  display: block;
+
+  margin-top: 4px;
+
+  color: var(--green-dark);
+
+  font-size: 18px;
+  font-weight: 900;
+}
+
+
+/* =====================================================
+   CONTACT CARD
+===================================================== */
+
+.contact-card {
+  width: 100%;
+
+  padding: 38px;
+
+  background: var(--white);
+
+  border: 1px solid var(--green-border);
+  border-radius: 26px;
+
+  box-shadow:
+    0 14px 34px rgba(45, 112, 55, 0.1);
+}
+
+
+/* =====================================================
+   CARD ICON
+===================================================== */
+
+.contact-card-icon {
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 18px;
+
+  background: var(--green-light);
+
+  border-radius: 17px;
+
+  font-size: 26px;
+}
+
+
+/* =====================================================
+   CARD LABEL
+===================================================== */
+
+.contact-card-label {
+  color: var(--green-primary);
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+
+/* =====================================================
+   CARD TITLE
+===================================================== */
+
+.contact-card h3 {
+  margin: 7px 0 0;
+
+  color: var(--green-dark);
+
+  font-size: 25px;
+  font-weight: 900;
+
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   CARD DESCRIPTION
+===================================================== */
+
+.contact-card > p {
+  margin: 12px 0 25px;
+
+  color: var(--text-secondary);
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   CONTACT ACTIONS
+===================================================== */
+
+.contact-phone,
+.contact-whatsapp {
+  width: 100%;
+  min-height: 68px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 13px 17px;
+
+  border-radius: 15px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+
+/* =====================================================
+   PHONE
+===================================================== */
+
+.contact-phone {
+  background: var(--green-light);
+  color: var(--green-dark);
+
+  border: 1px solid var(--green-border);
+}
+
+.contact-phone:hover {
+  transform: translateY(-2px);
+
+  background: var(--green-soft);
+
+  box-shadow:
+    0 6px 16px rgba(45, 112, 55, 0.1);
+}
+
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
+
+.contact-whatsapp {
+  margin-top: 12px;
+
+  background: var(--green-primary);
+  color: var(--white);
+}
+
+.contact-whatsapp:hover {
+  background: var(--green-dark);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 18px rgba(45, 112, 55, 0.18);
+}
+
+
+/* =====================================================
+   ACTION ICON
+===================================================== */
+
+.contact-action-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background: var(--white);
+
+  border-radius: 12px;
+
+  font-size: 18px;
+}
+
+
+/* =====================================================
+   ACTION TEXT
+===================================================== */
+
+.contact-phone small,
+.contact-whatsapp small {
+  display: block;
+
+  margin-bottom: 1px;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.contact-phone small {
+  color: var(--text-muted);
+}
+
+.contact-whatsapp small {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.contact-phone strong,
+.contact-whatsapp strong {
+  display: block;
+
+  font-size: 16px;
+  font-weight: 900;
+}
+
+
+/* =====================================================
+   BOTTOM MESSAGE
+===================================================== */
+
+.contact-bottom {
+  max-width: 900px;
+
+  margin: 52px auto 0;
+
+  text-align: center;
+}
+
+.contact-bottom p {
+  margin: 0;
+
+  color: var(--green-primary);
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.contact-bottom strong {
+  display: block;
+
+  margin-top: 4px;
+
+  color: var(--green-dark);
+
+  font-size: 23px;
+  font-weight: 900;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .contact-section {
+    padding: 65px 20px 55px;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .contact-content {
+    max-width: 720px;
+
+    margin: 0 auto;
+
+    text-align: center;
+  }
+
+  .contact-label {
+    margin: 0 auto;
+  }
+
+  .contact-title,
+  .contact-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-message {
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: left;
+  }
+
+  .contact-card {
+    max-width: 620px;
+
+    margin: 0 auto;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 640px) {
+
+  .contact-section {
+    padding: 50px 16px 42px;
+  }
+
+
+  /* ===================================================
+     LEFT
+  =================================================== */
+
+  .contact-label {
+    padding: 7px 15px;
+
+    font-size: 12px;
+  }
+
+  .contact-title {
+    margin-top: 17px;
+
+    font-size: 32px;
+
+    line-height: 1.5;
+  }
+
+  .contact-description {
+    margin-top: 16px;
+
+    font-size: 14px;
+
+    line-height: 1.85;
+  }
+
+
+  /* ===================================================
+     MESSAGE
+  =================================================== */
+
+  .contact-message {
+    margin-top: 22px;
+    padding: 16px;
+
+    gap: 12px;
+
+    text-align: left;
+  }
+
+  .contact-message-icon {
+    width: 45px;
+    height: 45px;
+
+    font-size: 19px;
+  }
+
+  .contact-message span {
+    font-size: 11px;
+  }
+
+  .contact-message strong {
+    font-size: 15px;
+  }
+
+
+  /* ===================================================
+     CARD
+  =================================================== */
+
+  .contact-card {
+    padding: 26px 18px;
+
+    border-radius: 21px;
+  }
+
+  .contact-card-icon {
+    width: 54px;
+    height: 54px;
+
+    margin-bottom: 14px;
+
+    font-size: 22px;
+  }
+
+  .contact-card h3 {
+    font-size: 21px;
+  }
+
+  .contact-card > p {
+    font-size: 14px;
+  }
+
+
+  /* ===================================================
+     ACTIONS
+  =================================================== */
+
+  .contact-phone,
+  .contact-whatsapp {
+    min-height: 64px;
+
+    padding: 12px 14px;
+  }
+
+  .contact-action-icon {
+    width: 39px;
+    height: 39px;
+
+    font-size: 16px;
+  }
+
+  .contact-phone strong,
+  .contact-whatsapp strong {
+    font-size: 14px;
+  }
+
+
+  /* ===================================================
+     BOTTOM
+  =================================================== */
+
+  .contact-bottom {
+    margin-top: 36px;
+  }
+
+  .contact-bottom p {
+    font-size: 13px;
+  }
+
+  .contact-bottom strong {
+    font-size: 18px;
+  }
+
+}
