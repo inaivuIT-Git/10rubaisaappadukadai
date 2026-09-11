@@ -1,9 +1,58 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import "../styles/WhyTenSection.css";
 
 export default function WhyTenSection() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="why-10" className="why-section">
+    <section
+      id="why-10"
+      className="why-section"
+      ref={sectionRef}
+    >
       <div className="why-container">
+
+        {/* =====================================================
+            CENTER HEADER
+        ===================================================== */}
+
+        <div className="why-section-header">
+          <span className="why-label">
+            ❤️ எங்கள் நோக்கம்
+          </span>
+
+          <h2 className="why-title">
+            பசியற்ற சமூகம்
+          </h2>
+
+          <span className="why-header-line" />
+        </div>
+
 
         {/* =====================================================
             MAIN STORY
@@ -11,17 +60,18 @@ export default function WhyTenSection() {
 
         <div className="why-story">
 
-          {/* LEFT SIDE */}
+          {/* ===================================================
+              LEFT SIDE
+          =================================================== */}
+
           <div className="why-story-content">
 
-            <span className="why-label">
-              ❤️ எங்கள் நோக்கம்
-            </span>
-
-            <h2 className="why-title">
+            <h3 className="why-story-title">
               பசி என்பது யாருக்கும்
-              <span> தடையாக இருக்கக்கூடாது.</span>
-            </h2>
+              <span>
+                தடையாக இருக்கக்கூடாது.
+              </span>
+            </h3>
 
             <p className="why-description">
               யாராக இருந்தாலும், பசியுடன் வருபவர்
@@ -29,74 +79,79 @@ export default function WhyTenSection() {
             </p>
 
             <div className="why-purpose">
-              <span>அதற்காகத்தான்</span>
+
+              <span className="why-purpose-label">
+                அதற்காகத்தான்
+              </span>
 
               <strong>
                 பத்து ரூபாய்
                 <br />
                 சாப்பாட்டுக்கடை.
               </strong>
+
             </div>
 
           </div>
 
 
-          {/* RIGHT SIDE */}
-          <div className="why-people">
+          {/* ===================================================
+              RIGHT SIDE - ANIMATED IMPACT
+          =================================================== */}
 
-            <div className="why-person">
+          <div
+            className={`why-impact ${
+              isVisible ? "why-impact-visible" : ""
+            }`}
+          >
+            <span className="why-impact-label">
+              எங்கள் எண்ணம்
+            </span>
 
-              <div className="why-person-icon">
-                💪
+            <div className="why-impact-steps">
+
+              {/* STEP 01 */}
+              <div className="why-impact-step why-impact-step-one">
+
+                <span className="why-impact-number">
+                  01
+                </span>
+
+                <h3>
+                  ஒரு சிறிய தொகை.
+                </h3>
+
               </div>
 
-              <div>
-                <span>ஒருவேளை...</span>
 
-                <p>
-                  உழைத்துக் களைத்து
-                  வருபவராக இருக்கலாம்...
-                </p>
+              {/* STEP 02 */}
+              <div className="why-impact-step why-impact-step-two">
+
+                <span className="why-impact-number">
+                  02
+                </span>
+
+                <h3>
+                  ஒரு நிறைவான உணவு.
+                </h3>
+
+              </div>
+
+
+              {/* STEP 03 */}
+              <div className="why-impact-step why-impact-step-three">
+
+                <span className="why-impact-number">
+                  03
+                </span>
+
+                <h3>
+                  ஒரு பெரிய நோக்கம்.
+                </h3>
+
               </div>
 
             </div>
-
-
-            <div className="why-person">
-
-              <div className="why-person-icon">
-                ❤️
-              </div>
-
-              <div>
-                <span>ஒருவேளை...</span>
-
-                <p>
-                  தனியாக வாழும்
-                  முதியவராக இருக்கலாம்...
-                </p>
-              </div>
-
-            </div>
-
-
-            <div className="why-person">
-
-              <div className="why-person-icon">
-                🍚
-              </div>
-
-              <div>
-                <span>ஒருவேளை...</span>
-
-                <p>
-                  அன்றைய ஒரு வேளை உணவை
-                  எதிர்பார்த்து வருபவராக இருக்கலாம்...
-                </p>
-              </div>
-
-            </div>
-
           </div>
 
         </div>

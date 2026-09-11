@@ -40,7 +40,7 @@ body {
 
   font-family: var(--font-tamil), Arial, sans-serif;
 
-  font-size: 17px;
+  font-size: 12px;
   line-height: 1.7;
 
   -webkit-font-smoothing: antialiased;
@@ -62,4 +62,12 @@ select {
 img {
   display: block;
   max-width: 100%;
+}
+:root {
+  /* existing colours... */
+
+  --font-section-title: 32px;
+  --font-subtitle: 22px;
+  --font-body: 16px;
+  --font-small: 14px;
 }

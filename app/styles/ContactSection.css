@@ -4,8 +4,7 @@
 
 .contact-section {
   width: 100%;
-
-  padding: 80px 20px 60px;
+  padding: 70px 20px 55px;
 
   background: var(--green-light);
 }
@@ -26,7 +25,7 @@
 
   align-items: center;
 
-  gap: 70px;
+  gap: 60px;
 }
 
 
@@ -47,19 +46,10 @@
   display: inline-flex;
   align-items: center;
 
-  padding: 8px 18px;
-
-  background: var(--white);
   color: var(--green-primary);
 
-  border: 1px solid var(--green-border);
-  border-radius: 999px;
-
   font-size: 14px;
-  font-weight: 800;
-
-  box-shadow:
-    0 3px 10px rgba(45, 112, 55, 0.05);
+  font-weight: 850;
 }
 
 
@@ -70,14 +60,14 @@
 .contact-title {
   max-width: 640px;
 
-  margin: 22px 0 0;
+  margin: 10px 0 0;
 
   color: var(--green-dark);
 
-  font-size: clamp(38px, 4vw, 53px);
+  font-size: 32px;
   font-weight: 900;
 
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 .contact-title span {
@@ -92,14 +82,14 @@
 .contact-description {
   max-width: 650px;
 
-  margin: 22px 0 0;
+  margin: 16px 0 0;
 
   color: var(--text-secondary);
 
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
 
-  line-height: 1.95;
+  line-height: 1.9;
 }
 
 
@@ -110,13 +100,13 @@
 .contact-message {
   max-width: 620px;
 
-  margin-top: 30px;
-  padding: 20px 22px;
+  margin-top: 26px;
+  padding: 18px 20px;
 
   display: flex;
   align-items: center;
 
-  gap: 16px;
+  gap: 14px;
 
   background: rgba(255, 255, 255, 0.65);
 
@@ -130,8 +120,8 @@
 ===================================================== */
 
 .contact-message-icon {
-  width: 52px;
-  height: 52px;
+  width: 48px;
+  height: 48px;
 
   display: flex;
   align-items: center;
@@ -143,7 +133,7 @@
 
   border-radius: 14px;
 
-  font-size: 23px;
+  font-size: 20px;
 }
 
 
@@ -163,7 +153,7 @@
 .contact-message strong {
   display: block;
 
-  margin-top: 4px;
+  margin-top: 3px;
 
   color: var(--green-dark);
 
@@ -179,15 +169,15 @@
 .contact-card {
   width: 100%;
 
-  padding: 38px;
+  padding: 32px;
 
   background: var(--white);
 
   border: 1px solid var(--green-border);
-  border-radius: 26px;
+  border-radius: 22px;
 
   box-shadow:
-    0 14px 34px rgba(45, 112, 55, 0.1);
+    0 12px 28px rgba(45, 112, 55, 0.09);
 }
 
 
@@ -196,20 +186,20 @@
 ===================================================== */
 
 .contact-card-icon {
-  width: 62px;
-  height: 62px;
+  width: 56px;
+  height: 56px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 
   background: var(--green-light);
 
-  border-radius: 17px;
+  border-radius: 16px;
 
-  font-size: 26px;
+  font-size: 24px;
 }
 
 
@@ -220,7 +210,7 @@
 .contact-card-label {
   color: var(--green-primary);
 
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 800;
 }
 
@@ -234,7 +224,7 @@
 
   color: var(--green-dark);
 
-  font-size: 25px;
+  font-size: 24px;
   font-weight: 900;
 
   line-height: 1.6;
@@ -246,11 +236,11 @@
 ===================================================== */
 
 .contact-card > p {
-  margin: 12px 0 25px;
+  margin: 10px 0 22px;
 
   color: var(--text-secondary);
 
-  font-size: 15px;
+  font-size: 14px;
 
   line-height: 1.8;
 }
@@ -263,14 +253,14 @@
 .contact-phone,
 .contact-whatsapp {
   width: 100%;
-  min-height: 68px;
+  min-height: 64px;
 
   display: flex;
   align-items: center;
 
-  gap: 14px;
+  gap: 13px;
 
-  padding: 13px 17px;
+  padding: 12px 16px;
 
   border-radius: 15px;
 
@@ -328,8 +318,8 @@
 ===================================================== */
 
 .contact-action-icon {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
 
   display: flex;
   align-items: center;
@@ -341,7 +331,7 @@
 
   border-radius: 12px;
 
-  font-size: 18px;
+  font-size: 17px;
 }
 
 
@@ -383,7 +373,7 @@
 .contact-bottom {
   max-width: 900px;
 
-  margin: 52px auto 0;
+  margin: 42px auto 0;
 
   text-align: center;
 }
@@ -393,7 +383,7 @@
 
   color: var(--green-primary);
 
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
 }
 
@@ -404,7 +394,7 @@
 
   color: var(--green-dark);
 
-  font-size: 23px;
+  font-size: 21px;
   font-weight: 900;
 }
 
@@ -414,15 +404,14 @@
 ===================================================== */
 
 @media (max-width: 900px) {
-
   .contact-section {
-    padding: 65px 20px 55px;
+    padding: 60px 20px 50px;
   }
 
   .contact-container {
     grid-template-columns: 1fr;
 
-    gap: 40px;
+    gap: 36px;
   }
 
   .contact-content {
@@ -455,7 +444,6 @@
 
     margin: 0 auto;
   }
-
 }
 
 
@@ -464,45 +452,33 @@
 ===================================================== */
 
 @media (max-width: 640px) {
-
   .contact-section {
-    padding: 50px 16px 42px;
+    padding: 48px 16px 42px;
   }
 
-
-  /* ===================================================
-     LEFT
-  =================================================== */
-
   .contact-label {
-    padding: 7px 15px;
-
     font-size: 12px;
   }
 
   .contact-title {
-    margin-top: 17px;
+    margin-top: 10px;
 
-    font-size: 32px;
+    font-size: 27px;
 
     line-height: 1.5;
   }
 
   .contact-description {
-    margin-top: 16px;
+    margin-top: 14px;
 
-    font-size: 14px;
+    font-size: 15px;
 
     line-height: 1.85;
   }
 
-
-  /* ===================================================
-     MESSAGE
-  =================================================== */
-
   .contact-message {
     margin-top: 22px;
+
     padding: 16px;
 
     gap: 12px;
@@ -511,10 +487,10 @@
   }
 
   .contact-message-icon {
-    width: 45px;
-    height: 45px;
+    width: 44px;
+    height: 44px;
 
-    font-size: 19px;
+    font-size: 18px;
   }
 
   .contact-message span {
@@ -525,24 +501,23 @@
     font-size: 15px;
   }
 
-
-  /* ===================================================
-     CARD
-  =================================================== */
-
   .contact-card {
-    padding: 26px 18px;
+    padding: 24px 18px;
 
-    border-radius: 21px;
+    border-radius: 20px;
   }
 
   .contact-card-icon {
-    width: 54px;
-    height: 54px;
+    width: 52px;
+    height: 52px;
 
     margin-bottom: 14px;
 
-    font-size: 22px;
+    font-size: 21px;
+  }
+
+  .contact-card-label {
+    font-size: 12px;
   }
 
   .contact-card h3 {
@@ -553,21 +528,16 @@
     font-size: 14px;
   }
 
-
-  /* ===================================================
-     ACTIONS
-  =================================================== */
-
   .contact-phone,
   .contact-whatsapp {
-    min-height: 64px;
+    min-height: 62px;
 
-    padding: 12px 14px;
+    padding: 11px 14px;
   }
 
   .contact-action-icon {
-    width: 39px;
-    height: 39px;
+    width: 38px;
+    height: 38px;
 
     font-size: 16px;
   }
@@ -577,13 +547,8 @@
     font-size: 14px;
   }
 
-
-  /* ===================================================
-     BOTTOM
-  =================================================== */
-
   .contact-bottom {
-    margin-top: 36px;
+    margin-top: 34px;
   }
 
   .contact-bottom p {
@@ -593,5 +558,4 @@
   .contact-bottom strong {
     font-size: 18px;
   }
-
 }

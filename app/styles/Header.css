@@ -5,36 +5,36 @@
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 1000;
 
   width: 100%;
 
-  background: var(--green-primary);
-  color: var(--white);
+  background: var(--green-deep);
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 5px 20px rgba(12, 75, 52, 0.16);
 }
 
 
 /* =====================================================
-   HEADER CONTAINER
+   CONTAINER
 ===================================================== */
 
 .header-container {
   width: 100%;
-  max-width: 1280px;
-  height: 80px;
+  max-width: 1320px;
+  min-height: 86px;
 
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 10px 28px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  gap: 24px;
+  gap: 30px;
 }
 
 
@@ -43,14 +43,14 @@
 ===================================================== */
 
 .header-brand {
+  flex-shrink: 0;
+
   display: flex;
   align-items: center;
 
   gap: 12px;
 
-  flex-shrink: 0;
-
-  text-decoration: none;
+  color: #ffffff;
 }
 
 
@@ -59,8 +59,10 @@
 ===================================================== */
 
 .header-logo {
-  width: 56px;
-  height: 56px;
+  width: 62px;
+  height: 62px;
+
+  flex-shrink: 0;
 
   display: flex;
   align-items: center;
@@ -68,51 +70,54 @@
 
   overflow: hidden;
 
-  background: var(--green-light);
+  background: #ffffff;
 
+  border: 3px solid rgba(255, 255, 255, 0.92);
   border-radius: 50%;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.14);
 }
 
 .header-logo img {
   width: 100%;
   height: 100%;
 
+  display: block;
+
   object-fit: contain;
+
+  border-radius: 50%;
 }
 
 
 /* =====================================================
-   BRAND CONTENT
+   BRAND TEXT
 ===================================================== */
 
 .header-brand-content {
-  line-height: 1.15;
+  display: flex;
+  flex-direction: column;
+
+  line-height: 1.2;
 }
 
-.header-brand-content h1 {
-  margin: 0;
+.header-brand-price {
+  color: var(--accent-yellow);
 
-  color: var(--white);
-
-  font-size: 24px;
-  font-weight: 900;
+  font-size: 14px;
+  font-weight: 850;
 }
 
 .header-brand-name {
-  margin: 2px 0 0;
+  margin-top: 3px;
 
-  color: var(--green-light);
+  color: #ffffff;
 
-  font-size: 16px;
-  font-weight: 700;
-}
+  font-size: 17px;
+  font-weight: 900;
 
-.header-tagline {
-  margin: 3px 0 0;
-
-  color: rgba(255, 255, 255, 0.8);
-
-  font-size: 10px;
+  white-space: nowrap;
 }
 
 
@@ -123,27 +128,68 @@
 .header-nav {
   display: flex;
   align-items: center;
+  justify-content: center;
 
   gap: 28px;
 }
 
 .header-nav a {
-  color: var(--white);
+  position: relative;
 
-  font-size: 15px;
-  font-weight: 600;
+  padding: 12px 0;
 
-  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+
+  font-size: 14px;
+  font-weight: 750;
+
+  white-space: nowrap;
 
   transition:
     color 0.2s ease,
-    transform 0.2s ease;
+    opacity 0.2s ease;
+}
+
+.header-nav a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 4px;
+
+  width: 0;
+  height: 3px;
+
+  background: var(--accent-yellow);
+
+  border-radius: 999px;
+
+  transform: translateX(-50%);
+
+  transition: width 0.2s ease;
 }
 
 .header-nav a:hover {
-  color: var(--accent-yellow);
+  color: #ffffff;
+}
 
-  transform: translateY(-1px);
+.header-nav a:hover::after {
+  width: 28px;
+}
+
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.header-actions {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
 }
 
 
@@ -152,40 +198,46 @@
 ===================================================== */
 
 .header-contact-button {
-  display: flex;
+  min-height: 46px;
+
+  padding: 9px 18px;
+
+  display: inline-flex;
   align-items: center;
   justify-content: center;
 
   gap: 8px;
 
-  flex-shrink: 0;
+  background: #ffffff;
+  color: var(--green-deep);
 
-  padding: 12px 22px;
-
-  background: var(--green-dark);
-  color: var(--white);
-
-  border-radius: 999px;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
 
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 850;
 
-  text-decoration: none;
-
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  box-shadow:
+    0 5px 14px rgba(0, 0, 0, 0.12);
 
   transition:
     background 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .header-contact-button:hover {
-  background: var(--green-deep);
+  background: var(--accent-yellow);
+  color: var(--green-deep);
+
+  border-color: var(--accent-yellow);
 
   transform: translateY(-1px);
+}
 
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+.header-contact-icon {
+  font-size: 15px;
 }
 
 
@@ -194,27 +246,35 @@
 ===================================================== */
 
 .header-mobile-button {
-  display: none;
-
   width: 44px;
   height: 44px;
 
+  display: none;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  flex-shrink: 0;
+  gap: 5px;
 
   padding: 0;
 
-  background: var(--green-light);
-  color: var(--green-dark);
+  background: transparent;
 
-  border: none;
-  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 9px;
 
   cursor: pointer;
+}
 
-  font-size: 20px;
+.header-mobile-button span {
+  width: 20px;
+  height: 2px;
+
+  display: block;
+
+  background: #ffffff;
+
+  border-radius: 999px;
 }
 
 
@@ -222,10 +282,64 @@
    TABLET
 ===================================================== */
 
-@media (max-width: 1023px) {
+@media (max-width: 1100px) {
+
+  .header-container {
+    padding-left: 22px;
+    padding-right: 22px;
+
+    gap: 20px;
+  }
+
+  .header-nav {
+    gap: 18px;
+  }
+
+  .header-nav a {
+    font-size: 13px;
+  }
+
+  .header-brand-name {
+    font-size: 15px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE / SMALL TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .header-container {
+    min-height: 76px;
+
+    padding: 8px 18px;
+  }
+
+  .header-logo {
+    width: 54px;
+    height: 54px;
+  }
+
+  .header-brand-price {
+    font-size: 12px;
+  }
+
+  .header-brand-name {
+    font-size: 14px;
+  }
 
   .header-nav {
     display: none;
+  }
+
+  .header-contact-button {
+    min-height: 42px;
+
+    padding: 8px 14px;
+
+    font-size: 13px;
   }
 
   .header-mobile-button {
@@ -235,15 +349,17 @@
 
 
 /* =====================================================
-   MOBILE
+   SMALL MOBILE
 ===================================================== */
 
-@media (max-width: 640px) {
+@media (max-width: 520px) {
 
   .header-container {
-    height: 72px;
+    min-height: 70px;
 
-    padding: 0 16px;
+    padding: 7px 14px;
+
+    gap: 10px;
   }
 
   .header-logo {
@@ -251,20 +367,30 @@
     height: 50px;
   }
 
-  .header-brand-content h1 {
-    font-size: 19px;
+  .header-brand {
+    gap: 8px;
+  }
+
+  .header-brand-price {
+    font-size: 11px;
   }
 
   .header-brand-name {
-    font-size: 13px;
-  }
+    max-width: 145px;
 
-  .header-tagline {
-    display: none;
+    overflow: hidden;
+
+    font-size: 13px;
+
+    text-overflow: ellipsis;
   }
 
   .header-contact-button {
     display: none;
   }
 
+  .header-mobile-button {
+    width: 40px;
+    height: 40px;
+  }
 }

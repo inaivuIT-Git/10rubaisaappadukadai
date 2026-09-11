@@ -3,11 +3,21 @@
 ===================================================== */
 
 .why-section {
+  position: relative;
+
   width: 100%;
 
-  padding: 80px 24px;
+  padding: 70px 24px;
 
-  background: var(--green-soft);
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 92% 12%,
+      rgba(45, 112, 55, 0.07),
+      transparent 260px
+    ),
+    var(--green-soft);
 }
 
 
@@ -24,6 +34,80 @@
 
 
 /* =====================================================
+   CENTER SECTION HEADER
+===================================================== */
+
+.why-section-header {
+  width: 100%;
+  max-width: 760px;
+
+  margin: 0 auto 45px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+
+/* =====================================================
+   HEADER LABEL
+===================================================== */
+
+.why-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto;
+
+  color: var(--green-primary);
+
+  font-size: 14px;
+  font-weight: 850;
+
+  text-align: center;
+}
+
+.why-label::after {
+  display: none;
+}
+
+
+/* =====================================================
+   HEADER TITLE
+===================================================== */
+
+.why-title {
+  margin: 10px 0 11px;
+
+  color: var(--green-dark);
+
+  font-size: 32px;
+  font-weight: 900;
+
+  line-height: 1.45;
+}
+
+
+/* =====================================================
+   HEADER YELLOW LINE
+===================================================== */
+
+.why-header-line {
+  display: block;
+
+  width: 46px;
+  height: 3px;
+
+  background: var(--accent-yellow);
+
+  border-radius: 999px;
+}
+
+
+/* =====================================================
    MAIN STORY
 ===================================================== */
 
@@ -31,15 +115,9 @@
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
 
-  overflow: hidden;
+  align-items: center;
 
-  background: var(--white);
-
-  border: 1px solid var(--green-border);
-  border-radius: 28px;
-
-  box-shadow:
-    0 12px 35px rgba(45, 112, 55, 0.08);
+  gap: 70px;
 }
 
 
@@ -48,55 +126,30 @@
 ===================================================== */
 
 .why-story-content {
-  padding: 58px 50px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 25px 30px 25px 20px;
 }
 
 
 /* =====================================================
-   LABEL
+   LEFT TITLE
 ===================================================== */
 
-.why-label {
-  width: fit-content;
+.why-story-title {
+  max-width: 480px;
 
-  display: inline-flex;
-  align-items: center;
-
-  padding: 8px 17px;
-
-  background: var(--green-light);
-  color: var(--green-primary);
-
-  border: 1px solid var(--green-border);
-  border-radius: 999px;
-
-  font-size: 14px;
-  font-weight: 800;
-}
-
-
-/* =====================================================
-   TITLE
-===================================================== */
-
-.why-title {
-  max-width: 470px;
-
-  margin: 22px 0 0;
+  margin: 0;
 
   color: var(--green-dark);
 
-  font-size: clamp(37px, 4vw, 51px);
+  font-size: 25px;
   font-weight: 900;
 
-  line-height: 1.45;
+  line-height: 1.65;
 }
 
-.why-title span {
+.why-story-title span {
+  display: block;
+
   color: var(--green-primary);
 }
 
@@ -106,13 +159,13 @@
 ===================================================== */
 
 .why-description {
-  max-width: 430px;
+  max-width: 450px;
 
-  margin: 22px 0 0;
+  margin: 18px 0 0;
 
   color: var(--text-secondary);
 
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
 
   line-height: 1.9;
@@ -124,131 +177,295 @@
 ===================================================== */
 
 .why-purpose {
-  margin-top: 34px;
-  padding-top: 27px;
+  position: relative;
 
-  border-top: 1px solid var(--green-border);
+  max-width: 430px;
+
+  margin-top: 28px;
+  padding: 24px 0 0 22px;
+
+  border-top: 1px solid
+    rgba(45, 112, 55, 0.16);
 }
 
-.why-purpose span {
+.why-purpose::before {
+  content: "";
+
+  position: absolute;
+
+  top: 28px;
+  left: 0;
+
+  width: 4px;
+  height: 63px;
+
+  background: var(--accent-yellow);
+
+  border-radius: 999px;
+}
+
+
+/* =====================================================
+   PURPOSE LABEL
+===================================================== */
+
+.why-purpose-label {
   display: block;
 
   margin-bottom: 5px;
 
   color: var(--text-muted);
 
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 650;
 }
+
+
+/* =====================================================
+   PURPOSE TITLE
+===================================================== */
 
 .why-purpose strong {
   display: block;
 
   color: var(--green-primary);
 
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 900;
 
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
 
 /* =====================================================
-   RIGHT SIDE - PEOPLE
+   RIGHT SIDE - IMPACT
 ===================================================== */
 
-.why-people {
-  padding: 42px;
+.why-impact {
+  position: relative;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 18px 0 18px 55px;
 
-  background: var(--green-light);
-
-  border-left: 1px solid var(--green-border);
+  border-left: 1px solid
+    rgba(45, 112, 55, 0.18);
 }
 
 
 /* =====================================================
-   PERSON ROW
+   IMPACT LABEL
 ===================================================== */
 
-.why-person {
-  display: flex;
+.why-impact-label {
+  display: inline-flex;
   align-items: center;
 
-  gap: 20px;
+  gap: 10px;
 
-  padding: 25px 6px;
-
-  border-bottom: 1px solid
-    rgba(45, 112, 55, 0.16);
-}
-
-.why-person:first-child {
-  padding-top: 8px;
-}
-
-.why-person:last-child {
-  padding-bottom: 8px;
-
-  border-bottom: none;
-}
-
-
-/* =====================================================
-   PERSON ICON
-===================================================== */
-
-.why-person-icon {
-  width: 62px;
-  height: 62px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  flex-shrink: 0;
-
-  background: var(--white);
-
-  border: 1px solid var(--green-border);
-  border-radius: 18px;
-
-  font-size: 25px;
-
-  box-shadow:
-    0 4px 12px rgba(45, 112, 55, 0.07);
-}
-
-
-/* =====================================================
-   PERSON CONTENT
-===================================================== */
-
-.why-person span {
-  display: block;
-
-  margin-bottom: 3px;
+  margin-bottom: 18px;
 
   color: var(--green-primary);
 
-  font-size: 12px;
-  font-weight: 800;
-
-  letter-spacing: 0.5px;
+  font-size: 14px;
+  font-weight: 900;
 }
 
-.why-person p {
+.why-impact-label::after {
+  content: "";
+
+  width: 42px;
+  height: 3px;
+
+  background: var(--accent-yellow);
+
+  border-radius: 999px;
+}
+
+
+/* =====================================================
+   IMPACT STEPS
+===================================================== */
+
+.why-impact-steps {
+  position: relative;
+}
+
+
+/* =====================================================
+   CONNECTING LINE
+===================================================== */
+
+.why-impact-steps::before {
+  content: "";
+
+  position: absolute;
+
+  top: 24px;
+  bottom: 24px;
+  left: 22px;
+
+  width: 2px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(45, 112, 55, 0.18),
+      rgba(45, 112, 55, 0.38)
+    );
+
+  transform: scaleY(0);
+  transform-origin: top;
+
+  transition:
+    transform 1.2s ease 0.35s;
+}
+
+.why-impact-visible .why-impact-steps::before {
+  transform: scaleY(1);
+}
+
+
+/* =====================================================
+   IMPACT STEP
+===================================================== */
+
+.why-impact-step {
+  position: relative;
+  z-index: 2;
+
+  min-height: 88px;
+
+  display: grid;
+  grid-template-columns: 48px 1fr;
+
+  align-items: center;
+
+  gap: 22px;
+
+  opacity: 0;
+
+  transform: translateY(22px);
+
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+}
+
+
+/* =====================================================
+   STEP 01
+===================================================== */
+
+.why-impact-visible .why-impact-step-one {
+  opacity: 1;
+
+  transform: translateY(0);
+
+  transition-delay: 0.15s;
+}
+
+
+/* =====================================================
+   STEP 02
+===================================================== */
+
+.why-impact-visible .why-impact-step-two {
+  opacity: 1;
+
+  transform: translateY(0);
+
+  transition-delay: 0.55s;
+}
+
+
+/* =====================================================
+   STEP 03
+===================================================== */
+
+.why-impact-visible .why-impact-step-three {
+  opacity: 1;
+
+  transform: translateY(0);
+
+  transition-delay: 0.95s;
+}
+
+
+/* =====================================================
+   STEP NUMBER
+===================================================== */
+
+.why-impact-number {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  color: var(--green-primary);
+
+  border: 2px solid
+    rgba(45, 112, 55, 0.18);
+
+  border-radius: 50%;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  box-shadow:
+    0 7px 18px rgba(45, 112, 55, 0.08);
+}
+
+
+/* =====================================================
+   STEP TEXT
+===================================================== */
+
+.why-impact-step h3 {
   margin: 0;
 
   color: var(--green-dark);
 
-  font-size: 21px;
+  font-size: 24px;
   font-weight: 900;
 
-  line-height: 1.65;
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   FINAL STEP
+===================================================== */
+
+.why-impact-step-three .why-impact-number {
+  background: var(--accent-yellow);
+
+  color: var(--green-deep);
+
+  border-color: var(--accent-yellow);
+
+  transform: scale(1);
+
+  box-shadow:
+    0 8px 20px rgba(247, 201, 40, 0.25);
+
+  transition:
+    transform 0.45s ease 1.35s;
+}
+
+.why-impact-visible
+.why-impact-step-three
+.why-impact-number {
+  transform: scale(1.1);
+}
+
+.why-impact-step-three h3 {
+  color: var(--green-primary);
+
+  font-size: 27px;
+  font-weight: 950;
 }
 
 
@@ -257,85 +474,103 @@
 ===================================================== */
 
 .why-price-section {
-  max-width: 1000px;
+  position: relative;
 
-  margin: 32px auto 0;
-  padding: 30px 38px;
+  width: calc(100% - 90px);
+  max-width: 1040px;
 
-  display: flex;
+  margin: 55px auto 0;
+  padding: 27px 38px;
+
+  display: grid;
+  grid-template-columns: 120px 1fr;
+
   align-items: center;
 
-  gap: 28px;
+  gap: 34px;
 
-  background: var(--white);
+  overflow: hidden;
 
-  border: 1px solid var(--green-border);
-  border-radius: 22px;
+  background: var(--green-dark);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 15px 34px rgba(31, 93, 48, 0.16);
 }
 
 
 /* =====================================================
-   ₹10 CIRCLE
+   YELLOW ACCENT
+===================================================== */
+
+.why-price-section::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  width: 8px;
+  height: 100%;
+
+  background: var(--accent-yellow);
+}
+
+
+/* =====================================================
+   ₹10
 ===================================================== */
 
 .why-price-circle {
-  width: 100px;
-  height: 100px;
+  color: var(--accent-yellow);
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 48px;
+  font-weight: 950;
 
-  flex-shrink: 0;
-
-  background: var(--accent-yellow);
-  color: var(--green-deep);
-
-  border-radius: 50%;
-
-  font-size: 32px;
-  font-weight: 900;
-
-  box-shadow:
-    0 7px 18px rgba(0, 0, 0, 0.1);
+  line-height: 1;
 }
 
 
 /* =====================================================
-   ₹10 CONTENT
+   PRICE CONTENT
 ===================================================== */
 
 .why-price-content {
-  flex: 1;
+  padding-left: 30px;
+
+  border-left: 1px solid
+    rgba(255, 255, 255, 0.18);
 }
 
 .why-price-label {
   display: block;
 
-  color: var(--green-primary);
+  color: rgba(255, 255, 255, 0.68);
 
-  font-size: 13px;
-  font-weight: 800;
+  font-size: 12px;
+  font-weight: 750;
 }
 
 .why-price-content h3 {
-  margin: 5px 0 0;
+  margin: 4px 0 0;
 
-  color: var(--green-dark);
+  color: #ffffff;
 
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 900;
 
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .why-price-content p {
-  margin: 6px 0 0;
+  margin: 5px 0 0;
 
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.75);
 
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 500;
 
   line-height: 1.8;
 }
@@ -346,7 +581,7 @@
 ===================================================== */
 
 .why-closing {
-  max-width: 820px;
+  max-width: 850px;
 
   margin: 28px auto 0;
 
@@ -354,7 +589,7 @@
   align-items: center;
   justify-content: center;
 
-  gap: 15px;
+  gap: 14px;
 
   text-align: center;
 }
@@ -365,8 +600,8 @@
 ===================================================== */
 
 .why-closing-icon {
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
 
   display: flex;
   align-items: center;
@@ -374,11 +609,12 @@
 
   flex-shrink: 0;
 
-  background: var(--green-light);
+  border: 1px solid
+    rgba(45, 112, 55, 0.2);
 
   border-radius: 50%;
 
-  font-size: 18px;
+  font-size: 16px;
 }
 
 
@@ -391,18 +627,18 @@
 
   color: var(--text-secondary);
 
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
 }
 
 .why-closing strong {
   display: block;
 
-  margin-top: 3px;
+  margin-top: 2px;
 
   color: var(--green-dark);
 
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 900;
 }
 
@@ -414,28 +650,37 @@
 @media (max-width: 900px) {
 
   .why-section {
-    padding: 60px 20px;
+    padding: 60px 22px;
+  }
+
+  .why-section-header {
+    margin-bottom: 38px;
   }
 
   .why-story {
     grid-template-columns: 1fr;
+
+    gap: 38px;
   }
 
   .why-story-content {
-    padding: 45px 38px;
+    padding: 0;
   }
 
-  .why-people {
-    padding: 30px 38px;
+  .why-impact {
+    padding: 30px 0 0;
 
-    border-top: 1px solid var(--green-border);
     border-left: none;
+
+    border-top: 1px solid
+      rgba(45, 112, 55, 0.16);
   }
 
   .why-price-section {
-    max-width: 760px;
-  }
+    width: 100%;
 
+    margin-top: 45px;
+  }
 }
 
 
@@ -446,53 +691,46 @@
 @media (max-width: 640px) {
 
   .why-section {
-    padding: 46px 14px;
+    padding: 48px 18px;
   }
 
 
-  /* STORY */
+  /* HEADER */
 
-  .why-story {
-    border-radius: 21px;
+  .why-section-header {
+    margin-bottom: 34px;
   }
-
-  .why-story-content {
-    padding: 30px 20px;
-  }
-
-
-  /* LABEL */
 
   .why-label {
     font-size: 12px;
   }
 
-
-  /* TITLE */
-
   .why-title {
-    margin-top: 17px;
-
-    font-size: 31px;
-
-    line-height: 1.5;
+    font-size: 27px;
   }
 
 
-  /* DESCRIPTION */
+  /* LEFT SIDE */
+
+  .why-story-title {
+    font-size: 21px;
+  }
 
   .why-description {
-    margin-top: 16px;
+    margin-top: 14px;
 
     font-size: 15px;
   }
 
-
-  /* PURPOSE */
-
   .why-purpose {
-    margin-top: 24px;
-    padding-top: 20px;
+    margin-top: 22px;
+    padding: 20px 0 0 17px;
+  }
+
+  .why-purpose::before {
+    top: 24px;
+
+    height: 56px;
   }
 
   .why-purpose strong {
@@ -500,54 +738,74 @@
   }
 
 
-  /* PEOPLE */
+  /* IMPACT */
 
-  .why-people {
-    padding: 18px 20px;
+  .why-impact {
+    padding-top: 25px;
   }
 
-  .why-person {
+  .why-impact-label {
+    margin-bottom: 13px;
+
+    font-size: 12px;
+  }
+
+  .why-impact-step {
+    min-height: 78px;
+
+    grid-template-columns: 42px 1fr;
+
     gap: 14px;
-
-    padding: 20px 0;
   }
 
-  .why-person-icon {
-    width: 48px;
-    height: 48px;
+  .why-impact-number {
+    width: 40px;
+    height: 40px;
 
-    border-radius: 13px;
-
-    font-size: 20px;
+    font-size: 11px;
   }
 
-  .why-person p {
-    font-size: 16px;
+  .why-impact-steps::before {
+    top: 21px;
+    bottom: 21px;
+    left: 19px;
+  }
 
-    line-height: 1.7;
+  .why-impact-step h3 {
+    font-size: 18px;
+  }
+
+  .why-impact-step-three h3 {
+    font-size: 21px;
   }
 
 
   /* ₹10 */
 
   .why-price-section {
-    flex-direction: column;
+    grid-template-columns: 1fr;
 
-    margin-top: 20px;
-    padding: 24px 18px;
+    gap: 16px;
 
-    text-align: center;
+    margin-top: 36px;
+    padding: 24px 22px;
   }
 
   .why-price-circle {
-    width: 82px;
-    height: 82px;
+    font-size: 42px;
+  }
 
-    font-size: 26px;
+  .why-price-content {
+    padding: 16px 0 0;
+
+    border-top: 1px solid
+      rgba(255, 255, 255, 0.18);
+
+    border-left: none;
   }
 
   .why-price-content h3 {
-    font-size: 20px;
+    font-size: 19px;
   }
 
   .why-price-content p {
@@ -560,9 +818,9 @@
   .why-closing {
     flex-direction: column;
 
-    margin-top: 22px;
+    margin-top: 24px;
 
-    gap: 9px;
+    gap: 8px;
   }
 
   .why-closing p {
@@ -570,7 +828,37 @@
   }
 
   .why-closing strong {
-    font-size: 17px;
+    font-size: 16px;
+  }
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .why-impact-step {
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
   }
 
+  .why-impact-steps::before {
+    transform: scaleY(1);
+
+    transition: none;
+  }
+
+  .why-impact-step-three .why-impact-number,
+  .why-impact-visible
+  .why-impact-step-three
+  .why-impact-number {
+    transform: none;
+
+    transition: none;
+  }
 }

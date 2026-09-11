@@ -1,396 +1,537 @@
 /* =====================================================
-   HERO SECTION
+   HERO
 ===================================================== */
 
 .hero-section {
+  position: relative;
+
   width: 100%;
+  min-height: 650px;
+
   overflow: hidden;
 
-  background: var(--green-light);
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(255, 255, 255, 0.92),
+      rgba(245, 248, 239, 0.92) 45%,
+      rgba(239, 246, 229, 1) 100%
+    );
 }
+
 
 /* =====================================================
    CONTAINER
 ===================================================== */
 
 .hero-container {
+  position: relative;
+  z-index: 5;
+
   width: 100%;
-  max-width: 1280px;
+  max-width: 1380px;
+
+  min-height: 650px;
 
   margin: 0 auto;
-  padding: 72px 32px;
+  padding: 56px 44px 72px;
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.92fr 1.08fr;
+
   align-items: center;
 
-  gap: 64px;
+  gap: 52px;
 }
 
+
 /* =====================================================
-   CONTENT
+   LEFT CONTENT
 ===================================================== */
 
 .hero-content {
-  text-align: left;
+  position: relative;
+
+  width: 100%;
+  max-width: 610px;
+
+  z-index: 5;
 }
+
 
 /* =====================================================
-   SMALL LABEL
+   KICKER
 ===================================================== */
 
-.hero-label {
+.hero-kicker-wrap {
   display: inline-flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
-  padding: 10px 20px;
+.hero-kicker {
+  margin: 0;
 
-  background: var(--white);
-  color: var(--green-primary);
+  color: #114e35;
 
-  border: 1px solid var(--green-border);
+  font-size: 18px;
+  font-weight: 850;
+  font-style: italic;
+
+  line-height: 1.5;
+}
+
+.hero-kicker-line {
+  width: 100%;
+  height: 4px;
+
+  margin-top: 8px;
+
+  background: var(--accent-yellow);
+
   border-radius: 999px;
 
-  font-size: 15px;
-  font-weight: 700;
-
-  box-shadow: 0 3px 12px rgba(45, 112, 55, 0.08);
+  transform: rotate(-2deg);
 }
+
 
 /* =====================================================
    TITLE
 ===================================================== */
 
 .hero-title {
-  margin: 28px 0 0;
+  margin: 20px 0 0;
 
-  color: var(--green-dark);
+  color: #0c4b34;
 
-  font-size: 68px;
-  font-weight: 900;
+  font-size: clamp(48px, 4.4vw, 68px);
+  font-weight: 950;
 
-  line-height: 1.18;
+  line-height: 1.22;
+
   letter-spacing: -1px;
 }
 
-.hero-title-secondary {
-  color: var(--green-primary);
+.hero-title span {
+  display: block;
 }
+
+
+/* =====================================================
+   PRICE HIGHLIGHT
+===================================================== */
+
+.hero-price-highlight {
+  position: relative;
+
+  width: fit-content;
+
+  margin-top: 25px;
+  padding: 12px 26px;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  color: #0c4b34;
+
+  font-size: 21px;
+  font-weight: 900;
+
+  z-index: 1;
+}
+
+.hero-price-highlight::before {
+  content: "";
+
+  position: absolute;
+  z-index: -1;
+
+  top: 0;
+  right: -12px;
+  bottom: 0;
+  left: -12px;
+
+  background: var(--accent-yellow);
+
+  border-radius:
+    45% 55% 52% 48% /
+    18% 22% 24% 20%;
+
+  transform: rotate(-1deg);
+}
+
+.hero-price-highlight strong {
+  font-size: 35px;
+  font-weight: 950;
+
+  line-height: 1;
+}
+
 
 /* =====================================================
    DESCRIPTION
 ===================================================== */
 
 .hero-description {
-  max-width: 590px;
+  margin: 24px 0 0;
 
-  margin: 28px 0 0;
+  color: #35483e;
 
-  color: var(--text-secondary);
+  font-size: 18px;
+  font-weight: 500;
 
-  font-size: 20px;
-  font-weight: 600;
-
-  line-height: 1.9;
+  line-height: 1.85;
 }
+
 
 /* =====================================================
-   PRICE
+   INVITE
 ===================================================== */
 
-.hero-price-row {
-  margin-top: 32px;
+.hero-invite-wrap {
+  width: fit-content;
 
-  display: flex;
-  align-items: center;
-
-  gap: 18px;
+  margin-top: 22px;
 }
 
-.hero-price-circle {
-  width: 92px;
-  height: 92px;
+.hero-invite {
+  margin: 0;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: #14523a;
 
-  flex-shrink: 0;
+  font-size: 23px;
+  font-weight: 900;
+  font-style: italic;
+
+  line-height: 1.5;
+}
+
+.hero-invite span {
+  margin-left: 7px;
+
+  color: #d63b36;
+
+  font-style: normal;
+}
+
+.hero-invite-line {
+  display: block;
+
+  width: 170px;
+  height: 4px;
+
+  margin-top: 5px;
 
   background: var(--accent-yellow);
 
-  border-radius: 50%;
+  border-radius: 999px;
 
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transform: rotate(-3deg);
 }
 
-.hero-price-circle span {
-  color: var(--green-deep);
-
-  font-size: 34px;
-  font-weight: 900;
-}
-
-.hero-price-content {
-  text-align: left;
-}
-
-.hero-price-title {
-  margin: 0;
-
-  color: var(--green-dark);
-
-  font-size: 19px;
-  font-weight: 900;
-}
-
-.hero-price-description {
-  margin: 5px 0 0;
-
-  color: var(--text-secondary);
-
-  font-size: 16px;
-  font-weight: 500;
-}
 
 /* =====================================================
    BUTTONS
 ===================================================== */
 
 .hero-actions {
-  margin-top: 34px;
-
-  display: flex;
-  align-items: center;
-
-  gap: 14px;
-}
-
-.hero-primary-button,
-.hero-secondary-button {
-  min-height: 50px;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 13px 28px;
-
-  border-radius: 999px;
-
-  font-size: 16px;
-  font-weight: 800;
-
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease,
-    color 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.hero-primary-button {
-  background: var(--green-primary);
-  color: var(--white);
-
-  box-shadow: 0 5px 14px rgba(45, 112, 55, 0.22);
-}
-
-.hero-primary-button:hover {
-  background: var(--green-dark);
-
-  transform: translateY(-2px);
-
-  box-shadow: 0 8px 18px rgba(45, 112, 55, 0.28);
-}
-
-.hero-secondary-button {
-  background: var(--white);
-  color: var(--green-primary);
-
-  border: 2px solid var(--green-primary);
-}
-
-.hero-secondary-button:hover {
-  background: var(--green-primary);
-  color: var(--white);
-
-  transform: translateY(-2px);
-}
-
-/* =====================================================
-   HERO IMAGE
-===================================================== */
-
-.hero-image-wrapper {
-  position: relative;
-}
-
-.hero-image-card {
-  overflow: hidden;
-
-  background: var(--white);
-
-  border: 6px solid var(--white);
-  border-radius: 34px;
-
-  box-shadow: 0 20px 45px rgba(31, 93, 48, 0.16);
-}
-
-.hero-image {
-  width: 100%;
-  height: 500px;
-
-  object-fit: cover;
-}
-
-/* =====================================================
-   IMAGE INFORMATION
-===================================================== */
-
-.hero-image-info {
-  position: absolute;
-
-  right: 24px;
-  bottom: 24px;
-  left: 24px;
+  margin-top: 30px;
 
   display: flex;
   align-items: center;
 
   gap: 16px;
-
-  padding: 20px;
-
-  background: rgba(45, 112, 55, 0.95);
-  color: var(--white);
-
-  border-radius: 20px;
-
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
 }
 
-.hero-image-icon {
-  width: 52px;
-  height: 52px;
+.hero-button {
+  min-height: 56px;
 
-  display: flex;
+  padding: 12px 23px;
+
+  display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  flex-shrink: 0;
+  gap: 10px;
 
-  background: var(--accent-yellow);
-
-  border-radius: 50%;
-
-  font-size: 22px;
-}
-
-.hero-image-title {
-  margin: 0;
-
-  font-size: 18px;
-  font-weight: 900;
-}
-
-.hero-image-description {
-  margin: 5px 0 0;
-
-  color: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
 
   font-size: 15px;
+  font-weight: 850;
 
-  line-height: 1.7;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
+
+.hero-button-primary {
+  background: #075433;
+  color: var(--white);
+
+  border: 2px solid #075433;
+
+  box-shadow:
+    0 8px 18px rgba(7, 84, 51, 0.15);
+}
+
+.hero-button-primary:hover {
+  background: var(--green-dark);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 22px rgba(7, 84, 51, 0.22);
+}
+
+.hero-button-secondary {
+  background: rgba(255, 255, 255, 0.62);
+  color: #075433;
+
+  border: 2px solid #075433;
+}
+
+.hero-button-secondary:hover {
+  background: #075433;
+  color: var(--white);
+
+  transform: translateY(-2px);
+}
+
+.hero-button-icon,
+.hero-location-icon {
+  font-size: 18px;
+}
+
 
 /* =====================================================
-   FEATURE STRIP
+   BOTTOM NOTE
 ===================================================== */
 
-.hero-features {
+.hero-bottom-note {
+  margin-top: 52px;
+  margin-left: 200px;
+
+  display: inline-flex;
+  flex-direction: column;
+
+  color: rgba(68, 102, 69, 0.7);
+
+  font-size: 18px;
+  font-weight: 800;
+  font-style: italic;
+
+  line-height: 1.45;
+
+  transform: rotate(-5deg);
+}
+
+
+/* =====================================================
+   MIDDLE LEAF
+===================================================== */
+
+.hero-middle-leaf {
+  position: absolute;
+
+  z-index: 4;
+
+  top: 135px;
+  left: 46.5%;
+
+  font-size: 68px;
+
+  transform: rotate(-30deg);
+
+  opacity: 0.85;
+}
+
+
+/* =====================================================
+   COLLAGE
+===================================================== */
+
+.hero-collage {
+  position: relative;
+
+  width: 100%;
+  max-width: 690px;
+  height: 545px;
+
+  margin-left: auto;
+}
+
+
+/* =====================================================
+   COMMON PHOTO
+===================================================== */
+
+.hero-photo {
+  position: absolute;
+
+  overflow: hidden;
+
   background: var(--white);
 
-  border-top: 1px solid var(--green-border);
+  border: 5px solid rgba(255, 255, 255, 0.96);
+  border-radius: 28px;
+
+  box-shadow:
+    0 14px 30px rgba(20, 75, 46, 0.12);
 }
 
-.hero-features-container {
+.hero-photo img {
   width: 100%;
-  max-width: 1280px;
+  height: 100%;
 
-  margin: 0 auto;
+  display: block;
 
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
 }
 
-.hero-feature-item {
-  min-height: 100px;
+.hero-photo:hover img {
+  transform: scale(1.03);
+}
+
+
+/* =====================================================
+   MAIN PHOTO
+===================================================== */
+
+.hero-photo-main {
+  top: 0;
+  left: 0;
+
+  width: 52%;
+  height: 100%;
+}
+
+
+/* =====================================================
+   TOP PHOTO
+===================================================== */
+
+.hero-photo-top {
+  top: 0;
+  right: 0;
+
+  width: 46%;
+  height: 46.5%;
+}
+
+
+/* =====================================================
+   BOTTOM PHOTO
+===================================================== */
+
+.hero-photo-bottom {
+  right: 0;
+  bottom: 0;
+
+  width: 46%;
+  height: 50%;
+}
+
+
+/* =====================================================
+   DECORATIVE LEAVES
+===================================================== */
+
+.hero-leaf {
+  position: absolute;
+
+  z-index: -1;
+
+  font-size: 110px;
+
+  opacity: 0.75;
+}
+
+.hero-leaf-top {
+  top: -70px;
+  right: -45px;
+
+  transform: rotate(-25deg);
+}
+
+.hero-leaf-bottom {
+  right: -55px;
+  bottom: -55px;
+
+  transform: rotate(145deg);
+}
+
+
+/* =====================================================
+   LANDSCAPE DECORATION
+===================================================== */
+
+.hero-landscape {
+  position: absolute;
+
+  z-index: 2;
+
+  left: 34px;
+  bottom: -6px;
 
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 
-  gap: 14px;
+  gap: 7px;
 
-  padding: 22px 28px;
+  color: rgba(58, 108, 58, 0.45);
 
-  border-right: 1px solid var(--green-border);
+  opacity: 0.45;
+
+  filter: grayscale(1);
 }
 
-.hero-feature-item:last-child {
-  border-right: none;
+.hero-tree {
+  font-size: 42px;
 }
 
-.hero-feature-icon {
-  width: 50px;
-  height: 50px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  flex-shrink: 0;
-
-  background: var(--green-light);
-
-  border-radius: 50%;
-
-  font-size: 22px;
+.hero-temple {
+  font-size: 72px;
 }
 
-.hero-feature-title {
-  margin: 0;
-
-  color: var(--green-dark);
-
-  font-size: 16px;
-  font-weight: 800;
-}
-
-.hero-feature-description {
-  margin: 4px 0 0;
-
-  color: var(--text-secondary);
-
-  font-size: 14px;
-
-  line-height: 1.5;
-}
 
 /* =====================================================
    TABLET
 ===================================================== */
 
-@media (max-width: 1023px) {
+@media (max-width: 1000px) {
+
   .hero-container {
     grid-template-columns: 1fr;
 
-    padding: 56px 24px;
+    min-height: auto;
 
-    gap: 48px;
+    padding: 54px 28px 70px;
+
+    gap: 46px;
   }
 
   .hero-content {
+    max-width: 720px;
+
+    margin: 0 auto;
+
     text-align: center;
+  }
+
+  .hero-kicker-wrap {
+    align-items: center;
+  }
+
+  .hero-price-highlight {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-description {
@@ -398,171 +539,193 @@
     margin-right: auto;
   }
 
-  .hero-price-row {
-    justify-content: center;
+  .hero-invite-wrap {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-actions {
     justify-content: center;
   }
 
-  .hero-image-wrapper {
-    max-width: 680px;
+  .hero-bottom-note {
+    margin-left: 0;
+  }
+
+  .hero-middle-leaf {
+    display: none;
+  }
+
+  .hero-collage {
+    max-width: 720px;
+    height: 500px;
 
     margin: 0 auto;
   }
 
-  .hero-features-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .hero-feature-item:nth-child(2) {
-    border-right: none;
-  }
-
-  .hero-feature-item:nth-child(-n + 2) {
-    border-bottom: 1px solid var(--green-border);
+  .hero-landscape {
+    display: none;
   }
 }
+
 
 /* =====================================================
    MOBILE
 ===================================================== */
 
 @media (max-width: 640px) {
+
+  .hero-section {
+    min-height: auto;
+  }
+
   .hero-container {
-    padding: 44px 18px;
+    padding: 42px 16px 52px;
 
-    gap: 38px;
+    gap: 34px;
   }
 
-  .hero-label {
-    padding: 9px 16px;
 
-    font-size: 14px;
+  /* KICKER */
+
+  .hero-kicker {
+    font-size: 13px;
   }
+
+  .hero-kicker-line {
+    height: 3px;
+  }
+
+
+  /* TITLE */
 
   .hero-title {
-    margin-top: 22px;
+    margin-top: 16px;
 
-    font-size: 46px;
+    font-size: 36px;
 
-    line-height: 1.25;
+    line-height: 1.35;
+
+    letter-spacing: 0;
   }
+
+
+  /* PRICE */
+
+  .hero-price-highlight {
+    margin-top: 20px;
+
+    padding: 10px 16px;
+
+    gap: 6px;
+
+    font-size: 16px;
+  }
+
+  .hero-price-highlight strong {
+    font-size: 28px;
+  }
+
+
+  /* DESCRIPTION */
 
   .hero-description {
     margin-top: 20px;
 
-    font-size: 17px;
+    font-size: 15px;
 
     line-height: 1.8;
   }
 
-  .hero-price-row {
-    flex-direction: column;
 
-    margin-top: 26px;
+  /* INVITE */
+
+  .hero-invite-wrap {
+    margin-top: 18px;
   }
 
-  .hero-price-content {
-    text-align: center;
-  }
-
-  .hero-price-circle {
-    width: 84px;
-    height: 84px;
-  }
-
-  .hero-price-circle span {
-    font-size: 30px;
-  }
-
-  .hero-price-title {
+  .hero-invite {
     font-size: 18px;
   }
 
-  .hero-price-description {
-    font-size: 15px;
+  .hero-invite-line {
+    width: 125px;
+    height: 3px;
+
+    margin-left: auto;
+    margin-right: auto;
   }
+
+
+  /* BUTTONS */
 
   .hero-actions {
+    margin-top: 26px;
+
     flex-direction: column;
-
-    margin-top: 28px;
   }
 
-  .hero-primary-button,
-  .hero-secondary-button {
+  .hero-button {
     width: 100%;
-    max-width: 340px;
+    max-width: 320px;
 
-    font-size: 16px;
+    min-height: 50px;
+
+    padding: 10px 16px;
+
+    font-size: 13px;
   }
 
-  .hero-image-card {
-    border-width: 4px;
-    border-radius: 26px;
-  }
 
-  .hero-image {
-    height: 390px;
-  }
+  /* NOTE */
 
-  .hero-image-info {
-    right: 14px;
-    bottom: 14px;
-    left: 14px;
+  .hero-bottom-note {
+    margin-top: 30px;
+    margin-left: 0;
 
-    padding: 16px;
-  }
-
-  .hero-image-icon {
-    width: 46px;
-    height: 46px;
-
-    font-size: 19px;
-  }
-
-  .hero-image-title {
-    font-size: 16px;
-  }
-
-  .hero-image-description {
     font-size: 14px;
+
+    transform: rotate(-3deg);
   }
 
-  .hero-features-container {
-    grid-template-columns: 1fr;
+
+  /* COLLAGE */
+
+  .hero-collage {
+    width: 100%;
+    height: 355px;
   }
 
-  .hero-feature-item {
-    min-height: auto;
-
-    padding: 18px 20px;
-
-    border-right: none;
-    border-bottom: 1px solid var(--green-border);
+  .hero-photo {
+    border-width: 3px;
+    border-radius: 19px;
   }
 
-  .hero-feature-item:last-child {
-    border-bottom: none;
+  .hero-photo-main {
+    width: 52%;
   }
 
-  .hero-feature-title {
-    font-size: 16px;
+  .hero-photo-top {
+    width: 46%;
+    height: 46%;
   }
 
-  .hero-feature-description {
-    font-size: 14px;
+  .hero-photo-bottom {
+    width: 46%;
+    height: 51%;
   }
-}
-.hero-highlight-text {
-  margin: 18px 0 0;
 
-  color: var(--green-primary);
+  .hero-leaf {
+    font-size: 70px;
+  }
 
-  font-size: 20px;
-  font-weight: 900;
+  .hero-leaf-top {
+    top: -40px;
+    right: -30px;
+  }
 
-  line-height: 1.6;
+  .hero-leaf-bottom {
+    right: -30px;
+    bottom: -35px;
+  }
 }

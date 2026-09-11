@@ -22,7 +22,7 @@ export default function Footer() {
 
               <div className="footer-logo">
                 <img
-                  src="/images/logo/logo-square.png"
+                  src="/images/logo/logo.jpg"
                   alt="10 ரூபாய் சாப்பாட்டுக்கடை"
                 />
               </div>

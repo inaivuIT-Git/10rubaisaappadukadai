@@ -7,6 +7,7 @@ import LocationSection from "./components/LocationSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 
+
 export default function Home() {
   return (
     <>
@@ -16,6 +17,7 @@ export default function Home() {
         <Hero />
         <MenuSection />
         <WhyTenSection />
+
         <Gallery />
         <LocationSection />
         <ContactSection />
