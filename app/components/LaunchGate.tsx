@@ -40,18 +40,28 @@ function CountdownValue({ value, label }: { value: number; label: string }) {
 
 export default function LaunchGate({ children }: { children: ReactNode }) {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft);
+  const [preview, setPreview] = useState(false);
 
   useEffect(() => {
-    if (timeLeft.launched) return;
+    const url = new URL(window.location.href);
+    const isLocal =
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1";
+
+    setPreview(isLocal || url.searchParams.get("preview") === "1");
+  }, []);
+
+  useEffect(() => {
+    if (preview || timeLeft.launched) return;
 
     const timer = window.setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
 
     return () => window.clearInterval(timer);
-  }, [timeLeft.launched]);
+  }, [preview, timeLeft.launched]);
 
-  if (timeLeft.launched) {
+  if (preview || timeLeft.launched) {
     return <>{children}</>;
   }
 
