@@ -1,11 +1,13 @@
-
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import "../styles/Banner.css";
 
 type BannerItem = {
   id: number | string;
+  enabled: boolean;
+  startDate: string;
+  endDate: string;
   title: string;
   message: string;
   image: string;
@@ -13,54 +15,113 @@ type BannerItem = {
   occasion?: string;
 };
 
-type BannerResponse = {
-  type: "scheduled" | "default";
-  date: string;
-  banners: BannerItem[];
-};
+const scheduledBanners: BannerItem[] = [
+  {
+    id: 1,
+    enabled: true,
+    startDate: "2026-09-12",
+    endDate: "2026-09-12",
+    occasion: "birthday",
+    title: "",
+    message: "",
+    image: "/images/banner/image-1.jpeg",
+  },
+  {
+    id: 2,
+    enabled: true,
+    startDate: "2026-09-12",
+    endDate: "2026-09-12",
+    occasion: "birthday",
+    title: "",
+    message: "",
+    image: "/images/banner/image-2.jpeg",
+  },
+  {
+    id: 3,
+    enabled: false,
+    startDate: "2026-09-11",
+    endDate: "2026-09-11",
+    occasion: "birthday",
+    title: "",
+    message: "",
+    image: "/images/banner/image-3.jpg",
+  },
+  {
+    id: 4,
+    enabled: false,
+    startDate: "2026-09-04",
+    endDate: "2026-09-04",
+    occasion: "memorial",
+    title: "",
+    message: "",
+    image: "/images/banner/image-4.jpeg",
+  },
+  {
+    id: 5,
+    enabled: true,
+    startDate: "2026-09-04",
+    endDate: "2026-09-04",
+    occasion: "memorial",
+    title: "",
+    message: "",
+    image: "/images/banner/image-5.jpeg",
+  },
+  {
+    id: 6,
+    enabled: false,
+    startDate: "2026-09-04",
+    endDate: "2026-09-04",
+    occasion: "memorial",
+    title: "",
+    message: "",
+    image: "/images/banner/image-6.jpeg",
+  },
+];
+
+const defaultBanners: BannerItem[] = [];
+
+function indiaDate() {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Kolkata",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
+}
 
 export default function Banner() {
-  const [banners, setBanners] = useState<BannerItem[]>([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [loading, setLoading] = useState(true);
+  const banners = useMemo(() => {
+    const today = indiaDate();
+    const active = scheduledBanners.filter(
+      (banner) =>
+        banner.enabled &&
+        today >= banner.startDate &&
+        today <= banner.endDate
+    );
 
-  useEffect(() => {
-    async function loadBanners() {
-      try {
-        const response = await fetch("/api/banner");
-
-        if (!response.ok) {
-          throw new Error("Unable to load banners");
-        }
-
-        const data: BannerResponse = await response.json();
-
-        setBanners(data.banners ?? []);
-      } catch (error) {
-        console.error("Banner loading error:", error);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    loadBanners();
+    return active.length > 0
+      ? [
+          ...active.map((banner) => ({ ...banner, isDefault: false })),
+          ...defaultBanners.map((banner) => ({ ...banner, isDefault: true })),
+        ]
+      : defaultBanners.map((banner) => ({ ...banner, isDefault: true }));
   }, []);
+
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     if (banners.length <= 1) return;
 
-    const interval = setInterval(() => {
+    const interval = window.setInterval(() => {
       setCurrentIndex((current) =>
         current === banners.length - 1 ? 0 : current + 1
       );
     }, 5000);
 
-    return () => clearInterval(interval);
+    return () => window.clearInterval(interval);
   }, [banners]);
 
-  if (loading || banners.length === 0) {
-    return null;
-  }
+  if (banners.length === 0) return null;
 
   const currentBanner = banners[currentIndex];
 
@@ -80,9 +141,11 @@ export default function Banner() {
     <section className="banner-section">
       <div className="banner-container">
         <div className="banner-card">
-          <img src={currentBanner.image} alt={currentBanner.title} className="banner-image"/>
-
-          
+          <img
+            src={currentBanner.image}
+            alt={currentBanner.title || "Special announcement"}
+            className="banner-image"
+          />
 
           {banners.length > 1 && (
             <>
@@ -94,7 +157,6 @@ export default function Banner() {
               >
                 ‹
               </button>
-
               <button
                 type="button"
                 className="banner-arrow banner-arrow-right"
@@ -128,4 +190,3 @@ export default function Banner() {
     </section>
   );
 }
-
