@@ -41,6 +41,7 @@ function CountdownValue({ value, label }: { value: number; label: string }) {
 export default function LaunchGate({ children }: { children: ReactNode }) {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft);
   const [preview, setPreview] = useState(false);
+  const [ceremonyPreview, setCeremonyPreview] = useState(false);
   const [ceremonyLaunched, setCeremonyLaunched] = useState(false);
 
   useEffect(() => {
@@ -49,24 +50,28 @@ export default function LaunchGate({ children }: { children: ReactNode }) {
       window.location.hostname === "localhost" ||
       window.location.hostname === "127.0.0.1";
 
+    setCeremonyPreview(url.searchParams.get("ceremony") === "1");
     setPreview(isLocal || url.searchParams.get("preview") === "1");
   }, []);
 
   useEffect(() => {
-    if (preview || timeLeft.launched) return;
+    if (preview || ceremonyPreview || timeLeft.launched) return;
 
     const timer = window.setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
 
     return () => window.clearInterval(timer);
-  }, [preview, timeLeft.launched]);
+  }, [preview, ceremonyPreview, timeLeft.launched]);
 
-  if (preview || ceremonyLaunched) {
+  if ((preview && !ceremonyPreview) || ceremonyLaunched) {
     return <>{children}</>;
   }
 
-  const readyToLaunch = timeLeft.launched;
+  const readyToLaunch = ceremonyPreview || timeLeft.launched;
+  const displayedTime = ceremonyPreview
+    ? { days: 0, hours: 0, minutes: 0, seconds: 0 }
+    : timeLeft;
 
   return (
     <main className={`launch-page ${readyToLaunch ? "launch-page-ready" : ""}`}>
@@ -98,10 +103,10 @@ export default function LaunchGate({ children }: { children: ReactNode }) {
         </p>
 
         <div className="launch-countdown" aria-label="Time remaining until launch ceremony">
-          <CountdownValue value={timeLeft.days} label="நாட்கள்" />
-          <CountdownValue value={timeLeft.hours} label="மணி" />
-          <CountdownValue value={timeLeft.minutes} label="நிமிடம்" />
-          <CountdownValue value={timeLeft.seconds} label="வினாடி" />
+          <CountdownValue value={displayedTime.days} label="நாட்கள்" />
+          <CountdownValue value={displayedTime.hours} label="மணி" />
+          <CountdownValue value={displayedTime.minutes} label="நிமிடம்" />
+          <CountdownValue value={displayedTime.seconds} label="வினாடி" />
         </div>
 
         {readyToLaunch ? (
