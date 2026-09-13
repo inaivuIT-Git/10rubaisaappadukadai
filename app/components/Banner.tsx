@@ -1,139 +1,89 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/Banner.css";
 
 type BannerItem = {
-  id: number | string;
-  enabled: boolean;
-  startDate: string;
-  endDate: string;
-  title: string;
-  message: string;
+  id: string;
   image: string;
-  isDefault?: boolean;
-  occasion?: string;
 };
 
-const scheduledBanners: BannerItem[] = [
-  {
-    id: 1,
-    enabled: true,
-    startDate: "2026-09-12",
-    endDate: "2026-09-12",
-    occasion: "birthday",
-    title: "",
-    message: "",
-    image: "/images/banner/image-1.jpeg",
-  },
-  {
-    id: 2,
-    enabled: true,
-    startDate: "2026-09-12",
-    endDate: "2026-09-12",
-    occasion: "birthday",
-    title: "",
-    message: "",
-    image: "/images/banner/image-2.jpeg",
-  },
-  {
-    id: 3,
-    enabled: false,
-    startDate: "2026-09-11",
-    endDate: "2026-09-11",
-    occasion: "birthday",
-    title: "",
-    message: "",
-    image: "/images/banner/image-3.jpg",
-  },
-  {
-    id: 4,
-    enabled: false,
-    startDate: "2026-09-04",
-    endDate: "2026-09-04",
-    occasion: "memorial",
-    title: "",
-    message: "",
-    image: "/images/banner/image-4.jpeg",
-  },
-  {
-    id: 5,
-    enabled: true,
-    startDate: "2026-09-04",
-    endDate: "2026-09-04",
-    occasion: "memorial",
-    title: "",
-    message: "",
-    image: "/images/banner/image-5.jpeg",
-  },
-  {
-    id: 6,
-    enabled: false,
-    startDate: "2026-09-04",
-    endDate: "2026-09-04",
-    occasion: "memorial",
-    title: "",
-    message: "",
-    image: "/images/banner/image-6.jpeg",
-  },
-];
-
-const defaultBanners: BannerItem[] = [];
-
-function indiaDate() {
-  return new Intl.DateTimeFormat("en-CA", {
-    timeZone: "Asia/Kolkata",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  }).format(new Date());
-}
-
 export default function Banner() {
-  const banners = useMemo(() => {
-    const today = indiaDate();
-    const active = scheduledBanners.filter(
-      (banner) =>
-        banner.enabled &&
-        today >= banner.startDate &&
-        today <= banner.endDate
-    );
-
-    return active.length > 0
-      ? [
-          ...active.map((banner) => ({ ...banner, isDefault: false })),
-          ...defaultBanners.map((banner) => ({ ...banner, isDefault: true })),
-        ]
-      : defaultBanners.map((banner) => ({ ...banner, isDefault: true }));
-  }, []);
-
+  const [banners, setBanners] = useState<BannerItem[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadBanners() {
+      try {
+        const response = await fetch("/api/banners", {
+          cache: "no-store",
+        });
+
+        if (!response.ok) {
+          throw new Error("Unable to load banners");
+        }
+
+        const data = await response.json();
+
+        if (Array.isArray(data)) {
+          setBanners(data);
+        }
+      } catch (error) {
+        console.error("Banner error:", error);
+        setBanners([]);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadBanners();
+  }, []);
 
   useEffect(() => {
     if (banners.length <= 1) return;
 
     const interval = window.setInterval(() => {
       setCurrentIndex((current) =>
-        current === banners.length - 1 ? 0 : current + 1
+        current === banners.length - 1
+          ? 0
+          : current + 1
       );
     }, 5000);
 
-    return () => window.clearInterval(interval);
+    return () => {
+      window.clearInterval(interval);
+    };
   }, [banners]);
 
-  if (banners.length === 0) return null;
+  useEffect(() => {
+    if (
+      banners.length > 0 &&
+      currentIndex >= banners.length
+    ) {
+      setCurrentIndex(0);
+    }
+  }, [banners, currentIndex]);
+
+  if (loading || banners.length === 0) {
+    return null;
+  }
 
   const currentBanner = banners[currentIndex];
 
   function previousBanner() {
     setCurrentIndex((current) =>
-      current === 0 ? banners.length - 1 : current - 1
+      current === 0
+        ? banners.length - 1
+        : current - 1
     );
   }
 
   function nextBanner() {
     setCurrentIndex((current) =>
-      current === banners.length - 1 ? 0 : current + 1
+      current === banners.length - 1
+        ? 0
+        : current + 1
     );
   }
 
@@ -143,7 +93,7 @@ export default function Banner() {
         <div className="banner-card">
           <img
             src={currentBanner.image}
-            alt={currentBanner.title || "Special announcement"}
+            alt={`Donor banner ${currentIndex + 1}`}
             className="banner-image"
           />
 
@@ -157,6 +107,7 @@ export default function Banner() {
               >
                 ‹
               </button>
+
               <button
                 type="button"
                 className="banner-arrow banner-arrow-right"
@@ -175,7 +126,9 @@ export default function Banner() {
               <button
                 key={banner.id}
                 type="button"
-                onClick={() => setCurrentIndex(index)}
+                onClick={() =>
+                  setCurrentIndex(index)
+                }
                 className={
                   index === currentIndex
                     ? "banner-dot banner-dot-active"
