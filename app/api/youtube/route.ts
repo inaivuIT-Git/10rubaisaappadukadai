@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+/*youtube CHANNEL_ID */
 const CHANNEL_ID = "UClkUsLmJzRndVXjCVEhJCKg";
 
 const UPLOADS_PLAYLIST_ID =
