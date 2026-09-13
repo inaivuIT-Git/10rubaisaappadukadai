@@ -19,12 +19,12 @@ export default function Hero() {
           </div>
 
           <h1 className="hero-title">
-            பசி இல்லாத
-            <span>ஒரு நாளை நோக்கி.</span>
+            பசியில்லாத
+            <span>சமுதாயம் நோக்கி.</span>
           </h1>
 
           <div className="hero-price-highlight">
-            <span>முழு சாப்பாடு</span>
+            <span>அளவு இல்லாத சாப்பாடு</span>
             <strong>₹10</strong>
             <span>மட்டும்</span>
           </div>

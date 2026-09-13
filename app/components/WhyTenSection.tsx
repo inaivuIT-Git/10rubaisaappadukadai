@@ -47,7 +47,8 @@ export default function WhyTenSection() {
           </span>
 
           <h2 className="why-title">
-            பசியற்ற சமூகம்
+            பசியில்லாத சமுதாயம்
+
           </h2>
 
           <span className="why-header-line" />
@@ -87,7 +88,7 @@ export default function WhyTenSection() {
               <strong>
                 பத்து ரூபாய்
                 <br />
-                சாப்பாட்டுக்கடை.
+                சாப்பாட்டுக்கடை - சேலம்
               </strong>
 
             </div>
@@ -204,7 +205,7 @@ export default function WhyTenSection() {
             </p>
 
             <strong>
-              நம்மால் முடிந்த ஒரு வேளை உணவை பகிர்வோம்.
+              நம்மால் முடிந்தவரை ஒரு வேளை உணவை பகிர்வோம்.
             </strong>
           </div>
 
