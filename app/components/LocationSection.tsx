@@ -29,16 +29,17 @@ export default function LocationSection() {
             MAP
         ====================================================== */}
 
-        <div className="location-map-card">
-          <div className="location-map-wrapper">
-            <iframe
-              title="10 ரூபாய் சாப்பாட்டுக்கடை Location"
-              src="https://www.google.com/maps?q=79%2F1%2C%2020%2F2%2C%20Narasimman%20Road%2C%20near%20Siddhar%20Kaliyamman%20Temple%2C%20Salem%20636002%2C%20Tamil%20Nadu&output=embed"
-              loading="lazy"
-            />
-          </div>
-        </div>
-
+<div className="location-map-card">
+  <div className="location-map-wrapper">
+    <iframe
+      title="10 ரூபாய் சாப்பாட்டுக்கடை Location"
+      src="https://www.google.com/maps?q=M42R%2BR7V%2C%20Salem%20%28M.Corp.%29%2C%20Tamil%20Nadu&z=18&output=embed"
+      loading="lazy"
+      allowFullScreen
+      referrerPolicy="no-referrer-when-downgrade"
+    />
+  </div>
+</div>
         {/* =====================================================
             DETAILS
         ====================================================== */}
@@ -58,8 +59,6 @@ export default function LocationSection() {
                     நரசிம்மன் சாலை,
                     <br />
                     அருள்மிகு சித்திர காளியம்மன் கோவில் எதிரில்,
-                    <br />
-                    ஹவுசிங் போர்டு + போஸ்ட் ஆபிஸ் அருகில்,
                     <br />
                     செவ்வாய்ப்பேட்டை,
                     <br />

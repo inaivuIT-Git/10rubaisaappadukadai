@@ -174,15 +174,7 @@ export default function Gallery() {
                       </div>
                     </div>
 
-                    <div className="short-content">
-                      <p>{video.title}</p>
-
-                      <span className="short-date">
-                        {new Date(
-                          video.publishedAt
-                        ).toLocaleDateString("ta-IN")}
-                      </span>
-                    </div>
+              
                   </a>
                 ))}
               </div>
