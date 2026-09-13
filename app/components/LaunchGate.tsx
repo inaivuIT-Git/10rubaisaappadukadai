@@ -41,6 +41,7 @@ function CountdownValue({ value, label }: { value: number; label: string }) {
 export default function LaunchGate({ children }: { children: ReactNode }) {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft);
   const [preview, setPreview] = useState(false);
+  const [ceremonyLaunched, setCeremonyLaunched] = useState(false);
 
   useEffect(() => {
     const url = new URL(window.location.href);
@@ -61,12 +62,14 @@ export default function LaunchGate({ children }: { children: ReactNode }) {
     return () => window.clearInterval(timer);
   }, [preview, timeLeft.launched]);
 
-  if (preview || timeLeft.launched) {
+  if (preview || ceremonyLaunched) {
     return <>{children}</>;
   }
 
+  const readyToLaunch = timeLeft.launched;
+
   return (
-    <main className="launch-page">
+    <main className={`launch-page ${readyToLaunch ? "launch-page-ready" : ""}`}>
       <div className="launch-glow launch-glow-one" />
       <div className="launch-glow launch-glow-two" />
 
@@ -77,7 +80,9 @@ export default function LaunchGate({ children }: { children: ReactNode }) {
           alt="10 ரூபாய் சாப்பாட்டுக்கடை"
         />
 
-        <p className="launch-eyebrow">இணையதள அறிமுகப் பணிகள் நடைபெறுகின்றன</p>
+        <p className="launch-eyebrow">
+          {readyToLaunch ? "எங்கள் குட்டி விருந்தினர் தொடங்கி வைக்கத் தயாராகிறார்!" : "இணையதள அறிமுகப் பணிகள் நடைபெறுகின்றன"}
+        </p>
 
         <h1 id="launch-title">
           10 ரூபாய்
@@ -85,26 +90,46 @@ export default function LaunchGate({ children }: { children: ReactNode }) {
         </h1>
 
         <p className="launch-message">
-          பசி இல்லாத ஒரு நாளை நோக்கிய எங்கள் பயணம்
-          <br />
-          விரைவில் இணையத்தில் தொடங்குகிறது.
+          {readyToLaunch ? (
+            <>சிறிய கைகளால் ஒரு பெரிய தொடக்கம்!<br />மோதகத்தைத் தொட்டு இணையதளத்தைத் தொடங்கி வையுங்கள்.</>
+          ) : (
+            <>பசி இல்லாத ஒரு நாளை நோக்கிய எங்கள் பயணம்<br />விரைவில் இணையத்தில் தொடங்குகிறது.</>
+          )}
         </p>
 
-        <div className="launch-countdown" aria-label="Time remaining until launch">
+        <div className="launch-countdown" aria-label="Time remaining until launch ceremony">
           <CountdownValue value={timeLeft.days} label="நாட்கள்" />
           <CountdownValue value={timeLeft.hours} label="மணி" />
           <CountdownValue value={timeLeft.minutes} label="நிமிடம்" />
           <CountdownValue value={timeLeft.seconds} label="வினாடி" />
         </div>
 
-        <div className="launch-date">
-          <span>திங்கள் · 14 செப்டம்பர் 2026</span>
-          <strong>நண்பகல் 12:00 · இந்திய நேரம்</strong>
-        </div>
-
-        <p className="launch-english">
-          Website launch in progress · Monday, 14 September 2026 at 12:00 noon IST
-        </p>
+        {readyToLaunch ? (
+          <div className="launch-ceremony">
+            <p className="launch-ready-label">🎉 நேரம் வந்துவிட்டது! 🎉</p>
+            <button
+              type="button"
+              className="launch-modakam-button"
+              onClick={() => setCeremonyLaunched(true)}
+              aria-label="மோதகத்தைத் தொட்டு இணையதளத்தைத் தொடங்கி வையுங்கள்"
+            >
+              <img src="/images/launch/chocolate-modakam.svg" alt="சாக்லேட் மோதகம்" />
+              <span>மோதகத்தைப் பிடியுங்கள்!</span>
+              <small>தொட்டு இணையதளத்தைத் தொடங்கி வையுங்கள்</small>
+            </button>
+            <p className="launch-kid-note">எங்கள் குட்டி விருந்தினரின் கைகளால் இனிய தொடக்கம் ♥</p>
+          </div>
+        ) : (
+          <>
+            <div className="launch-date">
+              <span>திங்கள் · 14 செப்டம்பர் 2026</span>
+              <strong>நண்பகல் 12:00 · இந்திய நேரம்</strong>
+            </div>
+            <p className="launch-english">
+              Countdown ends at 12:00 noon IST · The website opens only when our little guest catches the modakam.
+            </p>
+          </>
+        )}
 
         <div className="launch-heart" aria-hidden="true">♥</div>
         <p className="launch-tagline">விலை குறைவு… வயிறு நிறைவு!</p>
