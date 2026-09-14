@@ -64,11 +64,14 @@ export default function LaunchGate({ children }: { children: ReactNode }) {
     return () => window.clearInterval(timer);
   }, [preview, ceremonyPreview, timeLeft.launched]);
 
-  if ((preview && !ceremonyPreview) || ceremonyLaunched) {
+  // The public launch ceremony is complete. After the official launch time,
+  // normal visitors now go straight to the website. The ceremony can still
+  // be revisited privately with ?ceremony=1 for memories/testing.
+  if ((timeLeft.launched && !ceremonyPreview) || (preview && !ceremonyPreview) || ceremonyLaunched) {
     return <>{children}</>;
   }
 
-  const readyToLaunch = ceremonyPreview || timeLeft.launched;
+  const readyToLaunch = ceremonyPreview;
   const displayedTime = ceremonyPreview
     ? { days: 0, hours: 0, minutes: 0, seconds: 0 }
     : timeLeft;
@@ -131,7 +134,7 @@ export default function LaunchGate({ children }: { children: ReactNode }) {
               <strong>நண்பகல் 12:00 · இந்திய நேரம்</strong>
             </div>
             <p className="launch-english">
-              Countdown ends at 12:00 noon IST · The website opens only when our little guest catches the modakam.
+              Countdown ends at 12:00 noon IST · The website opens with our little guest's ceremonial launch.
             </p>
           </>
         )}
