@@ -9,10 +9,42 @@ const notoSansTamil = Noto_Sans_Tamil({
   variable: "--font-tamil",
 });
 
+const siteUrl = "https://www.10rubaisaappadukadai.com";
+const title = "10 ரூபாய் சாப்பாட்டுக்கடை | Salem";
+const description =
+  "சேலத்தில் அனைவருக்கும் மலிவு விலையில் உணவு வழங்கும் 10 ரூபாய் சாப்பாட்டுக்கடை — பசியில்லா சமூகத்தை நோக்கிய ஒரு சமூக முயற்சி.";
+
 export const metadata: Metadata = {
-  title: "10 ரூபாய் சாப்பாட்டுக்கடை",
-  description:
-    "சுவையான உணவை எளிய விலையில் அனைவருக்கும் வழங்கும் ஒரு சிறிய முயற்சி.",
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "ta_IN",
+    url: siteUrl,
+    siteName: "10 ரூபாய் சாப்பாட்டுக்கடை",
+    title,
+    description,
+    images: [
+      {
+        url: "/images/hero-food.jpg",
+        alt: "10 ரூபாய் சாப்பாட்டுக்கடை - Salem",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/images/hero-food.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -22,9 +54,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ta">
-      <body className={notoSansTamil.variable}>
-        {children}
-      </body>
+      <body className={notoSansTamil.variable}>{children}</body>
     </html>
   );
 }
