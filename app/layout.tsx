@@ -10,7 +10,7 @@ const notoSansTamil = Noto_Sans_Tamil({
 });
 
 const siteUrl = "https://www.10rubaisaappadukadai.com";
-const title = "10 ரூபாய் சாப்பாட்டுக்கடை | Salem";
+const title = "10 Rubai Saappadu Kadai | Salem | 10 ரூபாய் சாப்பாட்டுக்கடை";
 const description =
   "சேலத்தில் அனைவருக்கும் மலிவு விலையில் உணவு வழங்கும் 10 ரூபாய் சாப்பாட்டுக்கடை — பசியில்லா சமூகத்தை நோக்கிய ஒரு சமூக முயற்சி.";
 
