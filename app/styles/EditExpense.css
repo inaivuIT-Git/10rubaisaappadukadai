@@ -1,0 +1,637 @@
+/* =====================================================
+   EDIT EXPENSE
+===================================================== */
+
+.edit-expense-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  margin-bottom: 24px;
+}
+
+.edit-expense-eyebrow {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #2f7a4d;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.edit-expense-page-header h1 {
+  margin: 0;
+
+  color: #1d3327;
+
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.edit-expense-page-header p {
+  margin: 7px 0 0;
+
+  color: #617067;
+
+  font-size: 15px;
+}
+
+.edit-expense-back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+
+  padding: 0 16px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce7de;
+  border-radius: 9px;
+
+  color: #2f6b4f;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.edit-expense-back-button:hover {
+  background: #f0f6f1;
+}
+
+/* =====================================================
+   ALERTS
+===================================================== */
+
+.edit-expense-alert,
+.edit-expense-error {
+  margin-bottom: 20px;
+
+  padding: 14px 16px;
+
+  border-radius: 9px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.edit-expense-success {
+  background: #eef8f0;
+
+  border: 1px solid #cce5d2;
+
+  color: #245c37;
+}
+
+.edit-expense-danger,
+.edit-expense-error {
+  background: #fff3f2;
+
+  border: 1px solid #f0d0cd;
+
+  color: #a73732;
+}
+
+.edit-expense-loading {
+  padding: 40px;
+
+  color: #53645a;
+
+  font-size: 15px;
+}
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.edit-expense-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 22px;
+}
+
+.edit-expense-section {
+  padding: 24px 26px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce7de;
+  border-radius: 14px;
+
+  box-shadow:
+    0 4px 15px
+    rgba(33, 75, 51, 0.05);
+}
+
+.edit-expense-section-header {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 16px;
+
+  margin-bottom: 22px;
+  padding-bottom: 16px;
+
+  border-bottom: 1px solid #edf2ee;
+}
+
+.edit-expense-section-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  background: #edf5ef;
+
+  border: 1px solid #d2e4d7;
+  border-radius: 10px;
+
+  color: #2f6b4f;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.edit-expense-section-header h2 {
+  margin: 0;
+
+  color: #1d3327;
+
+  font-size: 20px;
+}
+
+.edit-expense-section-header p {
+  margin: 4px 0 0;
+
+  color: #617067;
+
+  font-size: 14px;
+}
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.edit-expense-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px 26px;
+}
+
+.edit-expense-group {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.edit-expense-full {
+  grid-column: 1 / -1;
+}
+
+.edit-expense-group label {
+  color: #35483d;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.edit-expense-group label span {
+  color: #c93c37;
+}
+
+.edit-expense-group input,
+.edit-expense-group select,
+.edit-expense-group textarea {
+  width: 100%;
+
+  padding: 10px 12px;
+
+  background: #ffffff;
+
+  border: 1px solid #ccd9cf;
+  border-radius: 8px;
+
+  outline: none;
+
+  color: #26382e;
+
+  font-size: 15px;
+}
+
+.edit-expense-group input,
+.edit-expense-group select {
+  min-height: 44px;
+}
+
+.edit-expense-group textarea {
+  min-height: 92px;
+
+  resize: vertical;
+}
+
+.edit-expense-group input:focus,
+.edit-expense-group select:focus,
+.edit-expense-group textarea:focus {
+  border-color: #72a985;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(47, 122, 77, 0.1);
+}
+
+/* =====================================================
+   AMOUNT
+===================================================== */
+
+.edit-expense-amount {
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  border: 1px solid #ccd9cf;
+  border-radius: 8px;
+}
+
+.edit-expense-amount:focus-within {
+  border-color: #72a985;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(47, 122, 77, 0.1);
+}
+
+.edit-expense-amount > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  align-self: stretch;
+
+  min-width: 44px;
+
+  background: #f0f6f1;
+
+  border-right: 1px solid #dce7de;
+
+  color: #2f6b4f;
+
+  font-weight: 800;
+}
+
+.edit-expense-amount input {
+  border: 0;
+  border-radius: 0;
+
+  box-shadow: none;
+}
+
+.edit-expense-amount input:focus {
+  box-shadow: none;
+}
+
+/* =====================================================
+   RECEIPT
+===================================================== */
+
+.edit-expense-receipt-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.edit-expense-current-receipt,
+.edit-expense-upload-card,
+.edit-expense-preview {
+  min-height: 220px;
+
+  padding: 20px;
+
+  background: #f8fbf8;
+
+  border: 1px solid #dce7de;
+  border-radius: 12px;
+}
+
+.edit-expense-current-receipt,
+.edit-expense-upload-card {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.edit-expense-small-label {
+  margin-bottom: 7px;
+
+  color: #2f7a4d;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.edit-expense-current-receipt strong,
+.edit-expense-upload-card strong {
+  color: #1d3327;
+
+  font-size: 17px;
+}
+
+.edit-expense-current-receipt p,
+.edit-expense-upload-card p {
+  margin: 6px 0 14px;
+
+  color: #69776e;
+
+  font-size: 13px;
+
+  word-break: break-word;
+}
+
+.edit-expense-receipt-status {
+  display: inline-flex;
+
+  align-self: flex-start;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.edit-expense-receipt-status.uploaded {
+  background: #eaf6ed;
+
+  border: 1px solid #c9e3d0;
+
+  color: #287044;
+}
+
+.edit-expense-receipt-status.missing {
+  background: #f1f3f1;
+
+  border: 1px solid #dce2dd;
+
+  color: #68746c;
+}
+
+.edit-expense-upload-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  align-self: flex-start;
+
+  min-height: 40px;
+
+  padding: 0 16px;
+
+  cursor: pointer;
+
+  background: #edf5ef;
+
+  border: 1px solid #c9dfcf;
+  border-radius: 8px;
+
+  color: #2f6b4f;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.edit-expense-upload-button:hover {
+  background: #e4f0e7;
+}
+
+.edit-expense-upload-button input {
+  display: none;
+}
+
+.edit-expense-preview {
+  overflow: hidden;
+
+  padding: 0;
+}
+
+.edit-expense-preview img {
+  width: 100%;
+  height: 220px;
+
+  object-fit: contain;
+
+  background: #ffffff;
+}
+
+.edit-expense-preview-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 220px;
+
+  padding: 24px;
+
+  text-align: center;
+}
+
+.edit-expense-preview-empty span {
+  color: #2f7a4d;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.edit-expense-preview-empty strong {
+  margin-top: 7px;
+
+  color: #31463a;
+
+  font-size: 15px;
+}
+
+.edit-expense-preview-empty p {
+  margin: 6px 0 0;
+
+  color: #748078;
+
+  font-size: 13px;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.edit-expense-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 16px 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce7de;
+  border-radius: 12px;
+}
+
+.edit-expense-footer > div:first-child {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.edit-expense-footer strong {
+  color: #1d3327;
+
+  font-size: 14px;
+}
+
+.edit-expense-footer span {
+  color: #6e7c73;
+
+  font-size: 13px;
+}
+
+.edit-expense-actions {
+  display: flex;
+
+  gap: 12px;
+}
+
+.edit-expense-cancel,
+.edit-expense-save {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+
+  padding: 0 20px;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.edit-expense-cancel {
+  background: #ffffff;
+
+  border: 1px solid #ccd9cf;
+
+  color: #53645a;
+}
+
+.edit-expense-save {
+  cursor: pointer;
+
+  background: #2f7a4d;
+
+  border: 1px solid #2f7a4d;
+
+  color: #ffffff;
+}
+
+.edit-expense-save:hover:not(:disabled) {
+  background: #276840;
+}
+
+.edit-expense-save:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.65;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1000px) {
+  .edit-expense-receipt-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .edit-expense-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .edit-expense-full {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .edit-expense-page-header,
+  .edit-expense-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .edit-expense-back-button {
+    align-self: flex-start;
+  }
+
+  .edit-expense-section {
+    padding: 20px;
+  }
+
+  .edit-expense-actions {
+    width: 100%;
+  }
+
+  .edit-expense-cancel,
+  .edit-expense-save {
+    flex: 1;
+  }
+}
+
+/* =====================================================
+   EXISTING RECEIPT PREVIEW
+===================================================== */
+
+.edit-expense-existing-image {
+  width: 100%;
+  height: 150px;
+
+  margin: 12px 0 8px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #dce7de;
+  border-radius: 9px;
+}
+
+.edit-expense-existing-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}

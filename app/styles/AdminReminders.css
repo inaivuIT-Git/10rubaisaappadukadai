@@ -1,0 +1,853 @@
+/* =====================================================
+   ADMIN REMINDERS PAGE
+===================================================== */
+
+
+/* =====================================================
+   PAGE HEADER
+===================================================== */
+
+.reminders-header {
+  margin-bottom: 24px;
+}
+
+.reminders-header h1 {
+  margin: 0 0 8px;
+
+  color: var(--green-dark);
+
+  font-size: 34px;
+  font-weight: 900;
+}
+
+.reminders-header p {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   FILTER CARD
+===================================================== */
+
+.reminders-filter-card {
+  margin-bottom: 20px;
+
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid var(--green-border);
+  border-radius: 14px;
+
+  box-shadow: 0 5px 18px rgba(45, 112, 55, 0.05);
+}
+
+.reminders-filter-heading {
+  margin-bottom: 14px;
+}
+
+.reminders-filter-heading h2 {
+  margin: 0 0 3px;
+
+  color: var(--green-dark);
+
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.reminders-filter-heading p {
+  margin: 0;
+
+  color: var(--text-muted);
+
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   PERIOD BUTTONS
+===================================================== */
+
+.reminders-period-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.reminders-period-buttons button {
+  min-height: 36px;
+
+  padding: 7px 13px;
+
+  background: #ffffff;
+  color: var(--green-dark);
+
+  border: 1px solid var(--green-border);
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.reminders-period-buttons button:hover {
+  background: var(--green-light);
+
+  border-color: var(--green-primary);
+}
+
+.reminders-period-buttons button.active {
+  background: var(--green-primary);
+  color: #ffffff;
+
+  border-color: var(--green-primary);
+}
+
+
+/* =====================================================
+   SUMMARY CARDS
+===================================================== */
+
+.reminders-summary-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+
+  margin-bottom: 20px;
+}
+
+.reminders-summary-card {
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid var(--green-border);
+  border-radius: 14px;
+
+  box-shadow: 0 5px 18px rgba(45, 112, 55, 0.05);
+}
+
+.reminders-summary-card span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.reminders-summary-card strong {
+  color: var(--green-dark);
+
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.reminders-summary-card.pending {
+  border-color: #f4d9a7;
+}
+
+.reminders-summary-card.pending strong {
+  color: #a16207;
+}
+
+.reminders-summary-card.contacted {
+  border-color: #b9dfc2;
+}
+
+.reminders-summary-card.contacted strong {
+  color: #23703a;
+}
+
+
+/* =====================================================
+   SEARCH CARD
+===================================================== */
+
+.reminders-search-card {
+  margin-bottom: 20px;
+
+  padding: 18px 20px;
+
+  background: #ffffff;
+
+  border: 1px solid var(--green-border);
+  border-radius: 14px;
+
+  box-shadow: 0 5px 18px rgba(45, 112, 55, 0.05);
+}
+
+.reminders-search-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(300px, 1.7fr)
+    minmax(170px, 0.8fr)
+    auto;
+
+  align-items: end;
+
+  gap: 12px;
+}
+
+.reminders-form-field {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  min-width: 0;
+}
+
+.reminders-form-field label {
+  color: var(--green-dark);
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.reminders-form-field input,
+.reminders-form-field select {
+  width: 100%;
+  min-height: 40px;
+
+  padding: 8px 11px;
+
+  background: #ffffff;
+  color: #374151;
+
+  border: 1px solid #d8e2d6;
+  border-radius: 8px;
+
+  font-size: 12px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.reminders-form-field input:focus,
+.reminders-form-field select:focus {
+  border-color: var(--green-primary);
+
+  box-shadow: 0 0 0 3px rgba(45, 112, 55, 0.09);
+}
+
+
+/* =====================================================
+   RESET BUTTON
+===================================================== */
+
+.reminders-reset-button {
+  min-height: 40px;
+
+  padding: 8px 16px;
+
+  background: #ffffff;
+  color: var(--text-secondary);
+
+  border: 1px solid #d8e2d6;
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.reminders-reset-button:hover {
+  background: var(--green-light);
+
+  border-color: var(--green-primary);
+}
+
+
+/* =====================================================
+   TABLE CARD
+===================================================== */
+
+.reminders-table-card {
+  padding: 22px;
+
+  background: #ffffff;
+
+  border: 1px solid var(--green-border);
+  border-radius: 14px;
+
+  box-shadow: 0 5px 18px rgba(45, 112, 55, 0.05);
+}
+
+.reminders-table-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 16px;
+}
+
+.reminders-table-card-header h2 {
+  margin: 0 0 3px;
+
+  color: var(--green-dark);
+
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.reminders-table-card-header p {
+  margin: 0;
+
+  color: var(--text-muted);
+
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   TABLE WRAPPER
+===================================================== */
+
+.reminders-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  border: 1px solid #e5ebe4;
+  border-radius: 10px;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.reminders-table {
+  width: 100%;
+
+  min-width: 1250px;
+
+  border-collapse: collapse;
+
+  background: #ffffff;
+}
+
+.reminders-table thead {
+  background: #f3f8ef;
+}
+
+.reminders-table th {
+  padding: 13px 12px;
+
+  color: var(--green-dark);
+
+  border-bottom: 1px solid var(--green-border);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  line-height: 1.45;
+
+  text-align: left;
+  vertical-align: middle;
+
+  white-space: nowrap;
+}
+
+.reminders-table td {
+  padding: 15px 12px;
+
+  color: #4b5563;
+
+  border-bottom: 1px solid #edf1ed;
+
+  font-size: 13px;
+
+  vertical-align: middle;
+}
+
+.reminders-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.reminders-table tbody tr:hover {
+  background: #fbfdf9;
+}
+
+.reminders-table td strong {
+  color: #374151;
+
+  font-weight: 800;
+}
+
+
+/* =====================================================
+   OCCASION BADGE
+===================================================== */
+
+.reminder-occasion-badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 9px;
+
+  background: var(--green-light);
+  color: var(--green-dark);
+
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.reminder-status {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+.reminder-status.pending {
+  background: #fff4d6;
+  color: #8a6412;
+}
+
+.reminder-status.contacted {
+  background: #e8f6ec;
+  color: #23703a;
+}
+
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.reminder-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  white-space: nowrap;
+}
+
+.reminder-action-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 32px;
+
+  padding: 6px 10px;
+
+  border-radius: 7px;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.reminder-action-button:hover {
+  transform: translateY(-1px);
+}
+
+
+/* View Donor */
+
+.reminder-action-button.view {
+  background: #eff6ff;
+  color: #2563eb;
+
+  border: 1px solid #bfdbfe;
+}
+
+.reminder-action-button.view:hover {
+  background: #dbeafe;
+
+  border-color: #60a5fa;
+}
+
+
+/* Mark Contacted */
+
+.reminder-action-button.contacted {
+  background: #f0fdf4;
+  color: var(--green-dark);
+
+  border: 1px solid #bbf7d0;
+}
+
+.reminder-action-button.contacted:hover {
+  background: #dcfce7;
+
+  border-color: #86efac;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.reminders-empty-state {
+  padding: 35px !important;
+
+  color: var(--text-muted) !important;
+
+  text-align: center;
+
+  font-size: 13px !important;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+  .reminders-summary-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .reminders-search-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .reminders-search-field {
+    grid-column: 1 / -1;
+  }
+
+  .reminders-reset-button {
+    width: fit-content;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 640px) {
+  .reminders-header h1 {
+    font-size: 27px;
+  }
+
+  .reminders-filter-card,
+  .reminders-search-card,
+  .reminders-table-card {
+    padding: 16px;
+  }
+
+  .reminders-period-buttons {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .reminders-period-buttons button {
+    width: 100%;
+  }
+
+  .reminders-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reminders-search-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reminders-search-field {
+    grid-column: auto;
+  }
+
+  .reminders-reset-button {
+    width: 100%;
+  }
+}
+
+/* =====================================================
+   WHATSAPP SPONSORSHIP WORKFLOW
+===================================================== */
+
+
+/* =====================================================
+   FOUR SUMMARY CARDS
+===================================================== */
+
+.reminders-summary-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+
+/* Pending */
+
+.reminders-summary-card:not(.whatsapp):not(.contacted):not(.not-interested) {
+  border-color: #f4d9a7;
+}
+
+.reminders-summary-card:not(.whatsapp):not(.contacted):not(.not-interested) strong {
+  color: #a16207;
+}
+
+
+/* WhatsApp Sent */
+
+.reminders-summary-card.whatsapp {
+  border-color: #b7dfc0;
+}
+
+.reminders-summary-card.whatsapp strong {
+  color: #1f7a3d;
+}
+
+
+/* Sponsored */
+
+.reminders-summary-card.contacted {
+  border-color: #9ed5aa;
+}
+
+.reminders-summary-card.contacted strong {
+  color: #176b32;
+}
+
+
+/* Not Interested */
+
+.reminders-summary-card.not-interested {
+  border-color: #e5e7eb;
+}
+
+.reminders-summary-card.not-interested strong {
+  color: #6b7280;
+}
+
+
+/* =====================================================
+   REMINDER STATUS BADGES
+===================================================== */
+
+/* Pending */
+
+.reminder-status.pending {
+  background: #fff4d6;
+  color: #8a6412;
+}
+
+
+/* WhatsApp Sent */
+
+.reminder-status.whatsapp-sent {
+  background: #e8f7ec;
+  color: #23703a;
+}
+
+
+/* Sponsored */
+
+.reminder-status.sponsored {
+  background: #dcfce7;
+  color: #166534;
+}
+
+
+/* Not Interested */
+
+.reminder-status.not-interested {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+
+/* =====================================================
+   ACTION BUTTON BASE
+===================================================== */
+
+.reminder-action-button {
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   SEND WHATSAPP
+===================================================== */
+
+.reminder-action-button.whatsapp {
+  background: #ecfdf3;
+  color: #18783c;
+
+  border: 1px solid #a7e3b7;
+}
+
+.reminder-action-button.whatsapp:hover {
+  background: #dcfce7;
+  border-color: #6fc98a;
+}
+
+
+/* =====================================================
+   SPONSORED
+===================================================== */
+
+.reminder-action-button.sponsored {
+  background: #f0fdf4;
+  color: #166534;
+
+  border: 1px solid #86efac;
+}
+
+.reminder-action-button.sponsored:hover {
+  background: #dcfce7;
+  border-color: #4ade80;
+}
+
+
+/* =====================================================
+   NOT INTERESTED
+===================================================== */
+
+.reminder-action-button.declined {
+  background: #ffffff;
+  color: #6b7280;
+
+  border: 1px solid #d1d5db;
+}
+
+.reminder-action-button.declined:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+
+/* =====================================================
+   COMPLETED TEXT
+===================================================== */
+
+.reminder-completed {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 30px;
+
+  padding: 5px 9px;
+
+  background: #dcfce7;
+  color: #166534;
+
+  border: 1px solid #bbf7d0;
+  border-radius: 7px;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   NOT INTERESTED TEXT
+===================================================== */
+
+.reminder-declined-text {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 30px;
+
+  padding: 5px 9px;
+
+  background: #f3f4f6;
+  color: #6b7280;
+
+  border-radius: 7px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   ACTION COLUMN WIDTH
+===================================================== */
+
+.reminders-table th:last-child,
+.reminders-table td:last-child {
+  min-width: 205px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+  .reminders-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 640px) {
+  .reminders-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reminder-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,2114 @@
+/* =====================================================
+   ADD DONATION
+   Compact Pleasant Green Admin Theme
+===================================================== */
+
+
+/* =====================================================
+   PAGE HEADER
+===================================================== */
+
+.donation-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+
+  margin-bottom: 18px;
+}
+
+.donation-page-heading {
+  min-width: 0;
+}
+
+.donation-page-eyebrow {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #2f6b4f;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+}
+
+.donation-page-heading h1 {
+  margin: 0 0 4px;
+
+  color: #1d3327;
+
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.donation-page-heading p {
+  max-width: 720px;
+
+  margin: 0;
+
+  color: #647168;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.admin-back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 40px;
+
+  padding: 7px 15px;
+
+  background: #ffffff;
+  color: #2f6b4f;
+
+  border: 1px solid #cfded3;
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.admin-back-button:hover {
+  background: #f3f8f4;
+  border-color: #8eb89b;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   ALERTS
+===================================================== */
+
+.donation-alert {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 14px;
+  padding: 11px 14px;
+
+  border-radius: 8px;
+}
+
+.donation-alert-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.donation-alert > div:last-child {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1px;
+}
+
+.donation-alert strong {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.donation-alert span {
+  font-size: 12px;
+}
+
+.donation-alert-success {
+  background: #f0f8f2;
+  color: #235c39;
+
+  border: 1px solid #c9e3d0;
+}
+
+.donation-alert-success .donation-alert-icon {
+  background: #2f7a4d;
+  color: #ffffff;
+}
+
+.donation-alert-error {
+  background: #fff4f3;
+  color: #9f2925;
+
+  border: 1px solid #f3cecb;
+}
+
+.donation-alert-error .donation-alert-icon {
+  background: #c93c37;
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.admin-donation-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+
+/* =====================================================
+   FORM SECTIONS
+===================================================== */
+
+.donation-section {
+  position: relative;
+
+  padding: 18px 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe8e1;
+  border-radius: 10px;
+
+  box-shadow:
+    0 1px 2px rgba(24, 57, 43, 0.03),
+    0 3px 8px rgba(24, 57, 43, 0.02);
+}
+
+
+/* =====================================================
+   SECTION HEADER
+===================================================== */
+
+.donation-section-header {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+
+  border-bottom: 1px solid #e5ece7;
+}
+
+.donation-section-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  background: #edf6ef;
+  color: #2f6b4f;
+
+  border: 1px solid #d6e7db;
+  border-radius: 8px;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.donation-section-header h2 {
+  margin: 0 0 2px;
+
+  color: #1d3327;
+
+  font-size: 18px;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+.donation-section-header p {
+  margin: 0;
+
+  color: #68756c;
+
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+
+/* =====================================================
+   FORM GRID
+===================================================== */
+
+.admin-form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 14px 20px;
+}
+
+.admin-form-full {
+  grid-column: 1 / -1;
+}
+
+
+/* =====================================================
+   FORM GROUPS
+===================================================== */
+
+.admin-form-group {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  gap: 5px;
+}
+
+.admin-form-group > label {
+  color: #34483a;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.admin-form-group > label > span {
+  color: #c93c37;
+}
+
+
+/* =====================================================
+   INPUTS
+===================================================== */
+
+.admin-form-group input,
+.admin-form-group select,
+.admin-form-group textarea {
+  width: 100%;
+
+  background: #ffffff;
+  color: #24382b;
+
+  border: 1px solid #ccd9cf;
+  border-radius: 7px;
+
+  outline: none;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.admin-form-group input,
+.admin-form-group select {
+  min-height: 40px;
+
+  padding: 7px 11px;
+}
+
+.admin-form-group textarea {
+  min-height: 70px;
+
+  padding: 8px 11px;
+
+  resize: vertical;
+}
+
+.admin-form-group input:hover,
+.admin-form-group select:hover,
+.admin-form-group textarea:hover {
+  border-color: #9fb8a6;
+}
+
+.admin-form-group input:focus,
+.admin-form-group select:focus,
+.admin-form-group textarea:focus {
+  border-color: #4f8b65;
+
+  box-shadow:
+    0 0 0 3px rgba(79, 139, 101, 0.1);
+}
+
+.admin-form-group input::placeholder,
+.admin-form-group textarea::placeholder {
+  color: #98a49b;
+}
+
+.form-field-help {
+  color: #7c8980;
+
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+
+/* =====================================================
+   DONOR SEARCH CARD
+===================================================== */
+
+.donor-search-card {
+  margin-bottom: 16px;
+  padding: 15px 18px;
+
+  background: #f7faf7;
+
+  border: 1px solid #dce7de;
+  border-radius: 9px;
+}
+
+.donor-search-card-header {
+  margin-bottom: 12px;
+}
+
+.donor-search-label {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: #397653;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.donor-search-card-header h3 {
+  margin: 0 0 2px;
+
+  color: #263b2d;
+
+  font-size: 15px;
+  font-weight: 750;
+}
+
+.donor-search-card-header p {
+  margin: 0;
+
+  color: #68756c;
+
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+
+/* =====================================================
+   DONOR SEARCH GRID
+===================================================== */
+
+.donor-search-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr)
+    auto;
+
+  align-items: end;
+
+  gap: 12px;
+}
+
+.donor-search-action {
+  display: flex;
+  align-items: flex-end;
+}
+
+.donor-search-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 115px;
+  min-height: 40px;
+
+  padding: 7px 17px;
+
+  background: #2f7a4d;
+  color: #ffffff;
+
+  border: 1px solid #2f7a4d;
+  border-radius: 7px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 2px 5px rgba(47, 122, 77, 0.16);
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.donor-search-button:hover:not(:disabled) {
+  background: #276840;
+  border-color: #276840;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 4px 9px rgba(47, 122, 77, 0.18);
+}
+
+.donor-search-button:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+}
+
+
+/* =====================================================
+   DONOR SEARCH MESSAGE
+===================================================== */
+
+.donor-search-message {
+  margin-top: 10px;
+  padding: 8px 11px;
+
+  background: #ffffff;
+  color: #66736a;
+
+  border: 1px solid #dce7de;
+  border-radius: 7px;
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+
+/* =====================================================
+   SEARCH RESULTS
+===================================================== */
+
+.donor-results {
+  margin-top: 12px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #dce7de;
+  border-radius: 8px;
+}
+
+.donor-results-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  padding: 8px 12px;
+
+  background: #f4f8f5;
+
+  border-bottom: 1px solid #dfe8e1;
+}
+
+.donor-results-heading strong {
+  color: #34483a;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.donor-results-heading span {
+  color: #7d8a81;
+
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   DONOR RESULT ROW
+===================================================== */
+
+.donor-result-row {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto
+    auto;
+
+  align-items: center;
+
+  gap: 16px;
+
+  padding: 10px 12px;
+
+  border-bottom: 1px solid #edf1ee;
+
+  transition: background 0.2s ease;
+}
+
+.donor-result-row:last-child {
+  border-bottom: none;
+}
+
+.donor-result-row:hover {
+  background: #f8faf8;
+}
+
+.donor-result-main {
+  display: flex;
+  align-items: center;
+
+  min-width: 0;
+
+  gap: 10px;
+}
+
+.donor-result-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  background: #edf6ef;
+  color: #2f6b4f;
+
+  border: 1px solid #d4e6d9;
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.donor-result-details {
+  min-width: 0;
+}
+
+.donor-result-details > strong {
+  display: block;
+
+  margin-bottom: 2px;
+
+  overflow: hidden;
+
+  color: #263b2d;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.donor-result-details > div {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 2px 12px;
+}
+
+.donor-result-details span {
+  color: #68756c;
+
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   DONOR HISTORY
+===================================================== */
+
+.donor-result-history {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 65px;
+
+  text-align: center;
+}
+
+.donor-result-history strong {
+  color: #34483a;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.donor-result-history span {
+  color: #7d8a81;
+
+  font-size: 10px;
+}
+
+
+/* =====================================================
+   SELECT DONOR BUTTON
+===================================================== */
+
+.donor-select-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 34px;
+
+  padding: 6px 13px;
+
+  background: #ffffff;
+  color: #2f6b4f;
+
+  border: 1px solid #9fc5aa;
+  border-radius: 7px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.donor-select-button:hover {
+  background: #2f7a4d;
+  color: #ffffff;
+
+  border-color: #2f7a4d;
+}
+
+
+/* =====================================================
+   SELECTED DONOR
+===================================================== */
+
+.selected-record-card {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 14px;
+  padding: 10px 14px;
+
+  background: #f0f7f2;
+
+  border: 1px solid #c8dfce;
+  border-radius: 8px;
+}
+
+.selected-record-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  background: #2f7a4d;
+  color: #ffffff;
+
+  border-radius: 50%;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.selected-record-main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.selected-record-main > span {
+  margin-bottom: 1px;
+
+  color: #568267;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+}
+
+.selected-record-main strong {
+  overflow: hidden;
+
+  color: #23422f;
+
+  font-size: 13px;
+  font-weight: 750;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.selected-record-main p {
+  margin: 1px 0 0;
+
+  color: #66736a;
+
+  font-size: 11px;
+}
+
+.selected-record-stat {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 90px;
+
+  padding-left: 14px;
+
+  border-left: 1px solid #c8dfce;
+
+  text-align: center;
+}
+
+.selected-record-stat strong {
+  color: #2f6b4f;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.selected-record-stat span {
+  color: #718077;
+
+  font-size: 10px;
+}
+
+
+/* =====================================================
+   SUBSECTION HEADINGS
+===================================================== */
+
+.form-subsection-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin: 3px 0 10px;
+}
+
+.form-subsection-heading h3 {
+  margin: 0 0 1px;
+
+  color: #34483a;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.form-subsection-heading p {
+  margin: 0;
+
+  color: #718077;
+
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   EXISTING OCCASIONS
+===================================================== */
+
+.existing-occasion-area {
+  margin-bottom: 16px;
+  padding-bottom: 15px;
+
+  border-bottom: 1px solid #e4ebe6;
+}
+
+.occasion-heading-row {
+  margin-top: 0;
+}
+
+.new-occasion-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 34px;
+
+  padding: 6px 12px;
+
+  background: #ffffff;
+  color: #2f6b4f;
+
+  border: 1px solid #9fc5aa;
+  border-radius: 7px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.new-occasion-button:hover {
+  background: #edf6ef;
+  border-color: #4f8b65;
+}
+
+
+/* =====================================================
+   OCCASION CARDS
+===================================================== */
+
+.occasion-card-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+.occasion-option-card {
+  display: block;
+
+  min-width: 0;
+
+  padding: 11px 13px;
+
+  background: #ffffff;
+  color: inherit;
+
+  border: 1px solid #dce5de;
+  border-radius: 8px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.occasion-option-card:hover {
+  border-color: #8eb89b;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 3px 8px rgba(47, 107, 79, 0.06);
+}
+
+.occasion-option-selected {
+  background: #eef7f0;
+
+  border-color: #4f8b65;
+
+  box-shadow:
+    0 0 0 2px rgba(79, 139, 101, 0.07);
+}
+
+.occasion-option-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 8px;
+
+  margin-bottom: 5px;
+}
+
+.occasion-option-top > span {
+  color: #68756c;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.occasion-option-top > strong {
+  color: #2f6b4f;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.occasion-option-card h4 {
+  margin: 0 0 3px;
+
+  overflow: hidden;
+
+  color: #263b2d;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.occasion-option-card p {
+  margin: 0;
+
+  color: #68756c;
+
+  font-size: 11px;
+}
+
+.occasion-option-card small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #7d8a81;
+
+  font-size: 10px;
+}
+
+
+/* =====================================================
+   ANNUAL REMINDER
+===================================================== */
+
+.reminder-card {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px 13px;
+
+  background: #f7faf7;
+
+  border: 1px solid #dce7de;
+  border-radius: 8px;
+}
+
+.reminder-checkbox {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.reminder-checkbox input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  opacity: 0;
+}
+
+.reminder-check-ui {
+  position: relative;
+
+  display: block;
+
+  width: 40px;
+  height: 22px;
+
+  background: #c9d3cc;
+
+  border-radius: 20px;
+
+  transition: background 0.2s ease;
+}
+
+.reminder-check-ui::after {
+  content: "";
+
+  position: absolute;
+
+  top: 3px;
+  left: 3px;
+
+  width: 16px;
+  height: 16px;
+
+  background: #ffffff;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.15);
+
+  transition: transform 0.2s ease;
+}
+
+.reminder-checkbox input:checked + .reminder-check-ui {
+  background: #2f7a4d;
+}
+
+.reminder-checkbox input:checked +
+.reminder-check-ui::after {
+  transform: translateX(18px);
+}
+
+.reminder-content {
+  flex: 1;
+}
+
+.reminder-content strong {
+  display: block;
+
+  margin-bottom: 1px;
+
+  color: #34483a;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.reminder-content p {
+  margin: 0;
+
+  color: #68756c;
+
+  font-size: 11px;
+}
+
+.reminder-status {
+  padding: 4px 9px;
+
+  background: #e8f4eb;
+  color: #2f6b4f;
+
+  border: 1px solid #cce2d2;
+  border-radius: 20px;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+}
+
+
+/* =====================================================
+   IMAGE UPLOAD LAYOUT
+===================================================== */
+
+.admin-image-upload-layout {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 14px;
+}
+
+
+/* =====================================================
+   IMAGE UPLOAD CARD
+===================================================== */
+
+.premium-upload-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  min-height: 150px;
+
+  padding: 16px 20px;
+
+  background: #f8faf8;
+
+  border: 1.5px dashed #b9ccbe;
+  border-radius: 9px;
+
+  text-align: center;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.premium-upload-card:hover {
+  background: #f2f8f3;
+  border-color: #6fa080;
+}
+
+.premium-upload-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  margin-bottom: 7px;
+
+  background: #edf6ef;
+  color: #2f6b4f;
+
+  border: 1px solid #d5e7da;
+  border-radius: 8px;
+
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.premium-upload-card h3 {
+  margin: 0 0 2px;
+
+  color: #34483a;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.premium-upload-card > p {
+  margin: 0 0 9px;
+
+  color: #718077;
+
+  font-size: 11px;
+}
+
+.premium-upload-card > small {
+  max-width: 320px;
+
+  margin-top: 7px;
+
+  color: #7d8a81;
+
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+
+/* =====================================================
+   UPLOAD BUTTON
+===================================================== */
+
+.premium-upload-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 36px;
+
+  padding: 6px 14px;
+
+  background: #2f7a4d;
+  color: #ffffff;
+
+  border-radius: 7px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.premium-upload-button:hover {
+  background: #276840;
+
+  transform: translateY(-1px);
+}
+
+.premium-upload-button input {
+  display: none;
+}
+
+
+/* =====================================================
+   IMAGE PREVIEW
+===================================================== */
+
+.premium-image-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 150px;
+
+  padding: 10px;
+
+  background: #f8faf8;
+
+  border: 1px solid #dce7de;
+  border-radius: 9px;
+
+  overflow: hidden;
+}
+
+.premium-image-preview img {
+  display: block;
+
+  width: 100%;
+  max-height: 190px;
+
+  object-fit: contain;
+
+  border-radius: 6px;
+}
+
+.premium-empty-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  padding: 14px;
+
+  text-align: center;
+}
+
+.premium-empty-preview > span {
+  margin-bottom: 4px;
+
+  color: #718077;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+.premium-empty-preview strong {
+  margin-bottom: 2px;
+
+  color: #45584b;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.premium-empty-preview p {
+  margin: 0;
+
+  color: #7d8a81;
+
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   PAYMENT SECTION
+===================================================== */
+
+.payment-section {
+  border-color: #d9e5dc;
+}
+
+.payment-section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  gap: 16px;
+}
+
+.super-admin-badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 4px 9px;
+
+  background: #edf6ef;
+  color: #2f6b4f;
+
+  border: 1px solid #d4e6d9;
+  border-radius: 20px;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   AMOUNT INPUT
+===================================================== */
+
+.admin-amount-input {
+  display: flex;
+  align-items: stretch;
+
+  width: 100%;
+}
+
+.admin-amount-input > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+
+  flex-shrink: 0;
+
+  background: #f4f8f5;
+  color: #34483a;
+
+  border: 1px solid #ccd9cf;
+  border-right: none;
+
+  border-radius: 7px 0 0 7px;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.admin-amount-input input {
+  border-radius: 0 7px 7px 0;
+}
+
+
+/* =====================================================
+   FORM FOOTER
+===================================================== */
+
+.donation-form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  padding: 12px 16px;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe8e1;
+  border-radius: 9px;
+
+  box-shadow:
+    0 2px 8px rgba(24, 57, 43, 0.03);
+}
+
+.donation-form-footer > div:first-child {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1px;
+}
+
+.donation-form-footer > div:first-child strong {
+  color: #34483a;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.donation-form-footer > div:first-child span {
+  color: #718077;
+
+  font-size: 11px;
+}
+
+.donation-form-footer-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+/* =====================================================
+   CANCEL BUTTON
+===================================================== */
+
+.admin-cancel-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 40px;
+
+  padding: 7px 16px;
+
+  background: #ffffff;
+  color: #526158;
+
+  border: 1px solid #ccd9cf;
+  border-radius: 7px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.admin-cancel-button:hover {
+  background: #f7faf7;
+  border-color: #9fb8a6;
+}
+
+
+/* =====================================================
+   SAVE BUTTON
+===================================================== */
+
+.admin-save-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 140px;
+  min-height: 40px;
+
+  padding: 7px 18px;
+
+  background: #2f7a4d;
+  color: #ffffff;
+
+  border: 1px solid #2f7a4d;
+  border-radius: 7px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 2px 5px rgba(47, 122, 77, 0.17);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-save-button:hover:not(:disabled) {
+  background: #276840;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 4px 9px rgba(47, 122, 77, 0.2);
+}
+
+.admin-save-button:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+/* =====================================================
+   FINAL SPACING + TYPOGRAPHY ADJUSTMENTS
+===================================================== */
+
+/* More space between main sections */
+.admin-donation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Slightly more comfortable section padding */
+.donation-section {
+  position: relative;
+  padding: 24px 26px;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe8e1;
+  border-radius: 10px;
+
+  box-shadow:
+    0 1px 2px rgba(24, 57, 43, 0.03),
+    0 3px 8px rgba(24, 57, 43, 0.02);
+}
+
+/* More space below section heading */
+.donation-section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 22px;
+  padding-bottom: 16px;
+
+  border-bottom: 1px solid #e5ece7;
+}
+
+/* Section title */
+.donation-section-header h2 {
+  margin: 0 0 3px;
+
+  color: #1d3327;
+
+  font-size: 20px;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+/* Section description */
+.donation-section-header p {
+  margin: 0;
+
+  color: #68756c;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* More breathing room between fields */
+.admin-form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px 26px;
+}
+
+.admin-form-group {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  gap: 7px;
+}
+
+/* Larger field labels */
+.admin-form-group > label {
+  color: #34483a;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Larger inputs */
+.admin-form-group input,
+.admin-form-group select,
+.admin-form-group textarea {
+  font-size: 15px;
+}
+
+/* Comfortable input height */
+.admin-form-group input,
+.admin-form-group select {
+  min-height: 44px;
+  padding: 9px 12px;
+}
+
+.admin-form-group textarea {
+  min-height: 82px;
+  padding: 10px 12px;
+}
+
+/* Help text */
+.form-field-help {
+  color: #7c8980;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Donor search */
+.donor-search-card {
+  margin-bottom: 20px;
+  padding: 20px 22px;
+
+  background: #f7faf7;
+
+  border: 1px solid #dce7de;
+  border-radius: 9px;
+}
+
+.donor-search-card-header {
+  margin-bottom: 16px;
+}
+
+.donor-search-card-header h3 {
+  margin: 0 0 3px;
+
+  color: #263b2d;
+
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.donor-search-card-header p {
+  margin: 0;
+
+  color: #68756c;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.donor-search-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr)
+    auto;
+
+  align-items: end;
+
+  gap: 18px;
+}
+
+/* Search button follows input height */
+.donor-search-button {
+  min-height: 44px;
+  font-size: 14px;
+}
+
+/* Selected donor */
+.selected-record-card {
+  gap: 14px;
+
+  margin-bottom: 20px;
+  padding: 14px 17px;
+}
+
+.selected-record-main strong {
+  font-size: 14px;
+}
+
+.selected-record-main p {
+  font-size: 12px;
+}
+
+/* Subsection headings */
+.form-subsection-heading {
+  gap: 14px;
+
+  margin: 6px 0 15px;
+}
+
+.form-subsection-heading h3 {
+  margin: 0 0 2px;
+
+  color: #34483a;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.form-subsection-heading p {
+  margin: 0;
+
+  color: #718077;
+
+  font-size: 12px;
+}
+
+/* Existing occasions */
+.existing-occasion-area {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid #e4ebe6;
+}
+
+.occasion-card-grid {
+  gap: 15px;
+}
+
+.occasion-option-card {
+  padding: 14px 16px;
+}
+
+.occasion-option-card h4 {
+  font-size: 14px;
+}
+
+.occasion-option-card p {
+  font-size: 12px;
+}
+
+/* Reminder */
+.reminder-card {
+  gap: 14px;
+  padding: 14px 16px;
+}
+
+.reminder-content strong {
+  font-size: 14px;
+}
+
+.reminder-content p {
+  font-size: 12px;
+}
+
+/* Image area - still reasonably compact */
+.admin-image-upload-layout {
+  gap: 20px;
+}
+
+.premium-upload-card {
+  min-height: 170px;
+  padding: 20px 24px;
+}
+
+.premium-image-preview {
+  min-height: 170px;
+  padding: 12px;
+}
+
+.premium-upload-card h3 {
+  font-size: 15px;
+}
+
+.premium-upload-card > p {
+  font-size: 12px;
+}
+
+.premium-upload-button {
+  min-height: 38px;
+  font-size: 13px;
+}
+
+/* Footer */
+.donation-form-footer {
+  gap: 20px;
+  padding: 16px 20px;
+}
+
+.donation-form-footer > div:first-child strong {
+  font-size: 14px;
+}
+
+.donation-form-footer > div:first-child span {
+  font-size: 12px;
+}
+
+.admin-cancel-button,
+.admin-save-button {
+  min-height: 44px;
+  font-size: 14px;
+}
+
+/* =====================================================
+   LARGE DESKTOP
+   Make better use of available width
+===================================================== */
+
+@media (min-width: 1200px) {
+  .admin-form-grid {
+    column-gap: 24px;
+  }
+
+  .occasion-card-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+  .occasion-card-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .admin-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-form-full {
+    grid-column: auto;
+  }
+
+  .donor-search-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .donor-search-action {
+    grid-column: 1 / -1;
+  }
+
+  .donor-search-button {
+    width: 100%;
+  }
+
+  .admin-image-upload-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 640px) {
+  .donation-page-header {
+    flex-direction: column;
+
+    margin-bottom: 16px;
+  }
+
+  .donation-page-heading h1 {
+    font-size: 27px;
+  }
+
+  .admin-back-button {
+    width: 100%;
+  }
+
+  .donation-section {
+    padding: 16px;
+  }
+
+  .donation-section-header {
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+  }
+
+  .donation-section-number {
+    width: 34px;
+    height: 34px;
+  }
+
+  .donor-search-card {
+    padding: 14px;
+  }
+
+  .donor-search-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .donor-search-action {
+    grid-column: auto;
+  }
+
+  .donor-result-row {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .donor-result-history {
+    align-items: flex-start;
+
+    text-align: left;
+  }
+
+  .donor-select-button {
+    width: 100%;
+  }
+
+  .selected-record-card {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .selected-record-main {
+    min-width: calc(100% - 50px);
+  }
+
+  .selected-record-stat {
+    width: calc(50% - 7px);
+
+    padding-top: 8px;
+    padding-left: 0;
+
+    border-top: 1px solid #c8dfce;
+    border-left: none;
+
+    text-align: left;
+  }
+
+  .occasion-heading-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .new-occasion-button {
+    width: 100%;
+  }
+
+  .occasion-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reminder-card {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .reminder-status {
+    margin-left: 52px;
+  }
+
+  .premium-upload-card,
+  .premium-image-preview {
+    min-height: 140px;
+  }
+
+  .payment-section-title {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 7px;
+  }
+
+  .donation-form-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .donation-form-footer-actions {
+    width: 100%;
+  }
+
+  .admin-cancel-button,
+  .admin-save-button {
+    flex: 1;
+  }
+}
+/* =====================================================
+   EXISTING OCCASIONS - DISPLAY ONLY
+===================================================== */
+
+.existing-occasion-area {
+  margin-bottom: 24px;
+}
+
+.occasion-display-list {
+  display: grid;
+  gap: 12px;
+
+  max-height: 330px;
+  overflow-y: auto;
+
+  padding-right: 6px;
+}
+
+.occasion-display-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 16px 18px;
+
+  background: #f6faf7;
+
+  border: 1px solid #dce7de;
+  border-radius: 12px;
+}
+
+.occasion-display-main {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.occasion-display-main strong {
+  color: #1d3327;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.occasion-display-main span {
+  color: #53645a;
+
+  font-size: 13px;
+}
+
+.occasion-display-date {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 150px;
+
+  text-align: right;
+}
+
+.occasion-display-date span {
+  color: #6b7d70;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.occasion-display-date strong {
+  margin-top: 4px;
+
+  color: #2f6b4f;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .occasion-display-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .occasion-display-date {
+    min-width: 0;
+
+    text-align: left;
+  }
+}

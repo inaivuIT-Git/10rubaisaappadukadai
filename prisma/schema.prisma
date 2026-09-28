@@ -1,0 +1,445 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+/**
+ * =====================================================
+ * ENUMS
+ * =====================================================
+ */
+
+enum OccasionType {
+  BIRTHDAY
+  WEDDING_ANNIVERSARY
+  MEMORIAL
+  OTHER
+}
+
+enum DonationFor {
+  SELF
+  FAMILY_MEMBER
+  FRIEND
+  RELATIVE
+  OTHER
+}
+
+enum PaymentMethod {
+  GPAY
+  CASH
+  NEFT
+}
+
+enum ReminderStatus {
+  PENDING
+  WHATSAPP_SENT
+  SPONSORED
+  NOT_INTERESTED
+}
+
+enum AdminRole {
+  SUPER_ADMIN
+  ADMIN
+}
+
+enum DonationImageType {
+  REFERENCE
+  BANNER
+}
+
+enum ExpenseType {
+  FOOD_EXPENSE
+  OPERATING_EXPENSE
+}
+
+enum ExpenseCategory {
+  RICE_GROCERIES
+  VEGETABLES
+  COOKING_GAS_FUEL
+  COOKING_MATERIALS
+  PACKAGING
+  TRANSPORT
+  RENT
+  ELECTRICITY
+  WATER
+  STAFF_LABOUR
+  MAINTENANCE
+  MARKETING_PRINTING
+  OTHER
+}
+
+/**
+ * =====================================================
+ * ADMIN USER
+ * =====================================================
+ */
+
+model AdminUser {
+  id           String @id @default(uuid())
+  name         String
+  email        String @unique
+  passwordHash String
+
+  role     AdminRole @default(ADMIN)
+  isActive Boolean   @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("admin_users")
+}
+
+/**
+ * =====================================================
+ * DONOR
+ * =====================================================
+ * One donor can have:
+ * - multiple occasions
+ * - multiple donations
+ * Example:
+ * Vidhya
+ * -> Own Birthday
+ * -> Sister Birthday
+ * -> Nephew Birthday
+ * -> Father Memorial
+ */
+
+model Donor {
+  id String @id @default(uuid())
+
+  name    String
+  mobile  String
+  email   String?
+  address String?
+
+  isActive Boolean @default(true)
+
+  occasions Occasion[]
+  donations Donation[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([mobile])
+  @@index([name])
+  @@map("donors")
+}
+
+/**
+ * =====================================================
+ * OCCASION
+ * =====================================================
+ * One donor can have several occasions.
+ * Example:
+ * Donor: Vidhya
+ * Occasion 1:
+ * Birthday / SELF / Vidhya
+ * Occasion 2:
+ * Birthday / FAMILY_MEMBER / Sister
+ * Occasion 3:
+ * Birthday / FAMILY_MEMBER / Nephew
+ */
+
+model Occasion {
+  id String @id @default(uuid())
+
+  donorId String
+  donor   Donor  @relation(fields: [donorId], references: [id], onDelete: Restrict)
+
+  occasionType OccasionType
+  donationFor  DonationFor
+
+  personName          String
+  relationshipToDonor String?
+
+  annualReminderEnabled Boolean @default(true)
+  isActive              Boolean @default(true)
+
+  donations       Donation[]
+  annualReminders AnnualReminder[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([donorId])
+  @@index([occasionType])
+  @@index([personName])
+  @@map("occasions")
+}
+
+/**
+ * =====================================================
+ * DONATION
+ * =====================================================
+ * One record represents one food sponsorship.
+ * ADMIN:
+ * - can create donor/occasion/service details
+ * - cannot access financial information
+ * SUPER_ADMIN:
+ * - can access and manage financial information
+ */
+
+model Donation {
+  id String @id @default(uuid())
+
+  donorId String
+  donor   Donor  @relation(fields: [donorId], references: [id], onDelete: Restrict)
+
+  occasionId String
+  occasion   Occasion @relation(fields: [occasionId], references: [id], onDelete: Restrict)
+
+  /**
+   * Actual food offered date.
+   * This date is also used as the basis
+   * for the next annual reminder.
+   */
+  foodOfferedDate DateTime @db.Date
+
+  /**
+   * =====================================================
+   * FINANCIAL INFORMATION
+   * SUPER_ADMIN ONLY
+   * =====================================================
+   * Optional because ADMIN can create a donation
+   * without entering financial information.
+   */
+
+  amountReceived Decimal? @db.Decimal(10, 2)
+
+  paymentMethod PaymentMethod?
+
+  transactionReference String?
+
+  paymentReceivedDate DateTime? @db.Date
+
+  images DonationImage[]
+
+  sponsoredReminders AnnualReminder[] @relation("SponsoredDonation")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([donorId])
+  @@index([occasionId])
+  @@index([foodOfferedDate])
+  @@index([paymentReceivedDate])
+  @@map("donations")
+}
+
+/**
+ * =====================================================
+ * DONATION IMAGE
+ * =====================================================
+ * REFERENCE:
+ * Original photo supplied by the donor.
+ * Used internally by the client while creating artwork.
+ * Never displayed automatically on the public website.
+ * BANNER:
+ * Final artwork prepared by the client.
+ * Eligible for display on the public website according
+ * to the donation's Food Offered Date.
+ * Both image types are optional.
+ * filePath is internal storage information and must
+ * never be exposed directly through public APIs.
+ */
+
+model DonationImage {
+  id String @id @default(uuid())
+
+  donationId String
+  donation   Donation @relation(fields: [donationId], references: [id], onDelete: Cascade)
+
+  imageType DonationImageType
+
+  fileName String
+  filePath String
+
+  sortOrder Int @default(1)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([donationId])
+  @@index([imageType])
+  @@index([donationId, imageType])
+  @@map("donation_images")
+}
+
+/**
+ * =====================================================
+ * ANNUAL REMINDER
+ * =====================================================
+ * Reminder is based on the Food Offered Date.
+ * Example:
+ * Food Offered Date:
+ * 10 Sep 2026
+ * Next target:
+ * 10 Sep 2027
+ * Reminder:
+ * 03 Sep 2027
+ */
+
+model AnnualReminder {
+  id String @id @default(uuid())
+
+  occasionId String
+  occasion   Occasion @relation(fields: [occasionId], references: [id], onDelete: Cascade)
+
+  reminderYear Int
+
+  reminderDate    DateTime @db.Date
+  foodOfferedDate DateTime @db.Date
+
+  status ReminderStatus @default(PENDING)
+
+  whatsappSentDate DateTime?
+  responseDate     DateTime?
+
+  /**
+   * When the donor sponsors again,
+   * this points to that new donation.
+   */
+  linkedDonationId String?
+
+  linkedDonation Donation? @relation("SponsoredDonation", fields: [linkedDonationId], references: [id], onDelete: SetNull)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  /**
+   * One reminder per occasion per year.
+   */
+  @@unique([occasionId, reminderYear])
+  @@index([reminderDate])
+  @@index([foodOfferedDate])
+  @@index([status])
+  @@map("annual_reminders")
+}
+
+/**
+ * =====================================================
+ * EXPENSE
+ * =====================================================
+ * Used to record day-to-day operational expenses.
+ * ADMIN and SUPER_ADMIN:
+ * - can create expenses
+ * - can view expenses
+ * - can update expenses
+ * Receipt / bill image is optional.
+ */
+
+model Expense {
+  id String @id @default(uuid())
+
+  /**
+   * Date the expense occurred.
+   */
+  expenseDate DateTime @db.Date
+
+  /**
+   * FOOD_EXPENSE:
+   * Expenses directly related to preparing / serving food.
+   * OPERATING_EXPENSE:
+   * General operational expenses such as rent,
+   * electricity, maintenance, transport, etc.
+   */
+  expenseType ExpenseType
+
+  category ExpenseCategory
+
+  description String
+
+  amount Decimal @db.Decimal(10, 2)
+
+  paymentMethod PaymentMethod
+
+  /**
+   * Supplier / person / organisation paid.
+   * Optional.
+   */
+  paidTo String?
+
+  /**
+   * Invoice number, bill number,
+   * UPI reference, bank reference, etc.
+   * Optional.
+   */
+  billReferenceNumber String?
+
+  /**
+   * Optional receipt / bill image.
+   * filePath must remain internal and
+   * must not be exposed directly through APIs.
+   */
+  receiptFileName String?
+  receiptFilePath String?
+
+  notes String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([expenseDate])
+  @@index([expenseType])
+  @@index([category])
+  @@index([paymentMethod])
+  @@map("expenses")
+}
+
+/**
+ * =====================================================
+ * DAILY MENU
+ * =====================================================
+ * Used to upload the menu artwork for a specific date.
+ * ADMIN and SUPER_ADMIN:
+ * - can upload today's menu
+ * - can replace/update the menu for a date
+ * Public website:
+ * - reads the menu for today's date
+ * - shows nothing / fallback if no menu exists
+ * Only one menu image is allowed per date.
+ */
+
+model DailyMenu {
+  id String @id @default(uuid())
+
+  /**
+   * Date for which this menu should be displayed.
+   */
+  menuDate DateTime @db.Date
+
+  /**
+   * Original uploaded file name.
+   */
+  fileName String
+
+  /**
+   * Internal storage path.
+   * Do not expose this directly from public APIs.
+   */
+  filePath String
+
+  /**
+   * Optional label or note.
+   * Example:
+   * "Today's Lunch Menu"
+   */
+  title String?
+
+  isActive Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  /**
+   * Only one menu image per date.
+   */
+  @@unique([menuDate])
+  @@index([menuDate])
+  @@index([isActive])
+  @@map("daily_menus")
+}

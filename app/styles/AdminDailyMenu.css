@@ -1,0 +1,450 @@
+/* =====================================================
+   DAILY MENU PAGE
+===================================================== */
+
+.daily-menu-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px;
+  background: #f4f7f3;
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   PAGE HEADER
+===================================================== */
+
+.daily-menu-header {
+  margin-bottom: 26px;
+}
+
+.daily-menu-eyebrow {
+  display: block;
+  margin-bottom: 6px;
+  color: #2d7037;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.daily-menu-header h1 {
+  margin: 0;
+  color: #174a2b;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.daily-menu-header p {
+  max-width: 680px;
+  margin: 7px 0 0;
+  color: #647067;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   TWO COLUMN LAYOUT
+===================================================== */
+
+.daily-menu-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  gap: 24px;
+  align-items: start;
+}
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.daily-menu-form-card,
+.daily-menu-history-card {
+  padding: 26px;
+  background: #ffffff;
+  border: 1px solid #dce8d6;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(23, 74, 43, 0.06);
+}
+
+.daily-menu-card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.daily-menu-card-heading h2 {
+  margin: 0;
+  color: #174a2b;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.daily-menu-card-heading p {
+  margin: 5px 0 0;
+  color: #6b756d;
+  font-size: 13px;
+}
+
+/* =====================================================
+   STATUS / COUNT
+===================================================== */
+
+.daily-menu-status {
+  flex-shrink: 0;
+  padding: 6px 11px;
+  background: #eaf5e5;
+  color: #2d7037;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.daily-menu-count {
+  min-width: 34px;
+  height: 34px;
+  padding: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #eaf5e5;
+  color: #2d7037;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* =====================================================
+   MESSAGES
+===================================================== */
+
+.daily-menu-message {
+  margin-bottom: 20px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.daily-menu-message.success {
+  background: #edf8ed;
+  color: #24642e;
+  border: 1px solid #cfe5cf;
+}
+
+.daily-menu-message.error {
+  background: #fff1f1;
+  color: #a13434;
+  border: 1px solid #efcccc;
+}
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.daily-menu-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.daily-menu-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.daily-menu-field label {
+  color: #33463a;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.daily-menu-field label span {
+  margin-left: 3px;
+  color: #b42318;
+}
+
+.daily-menu-field input[type="text"],
+.daily-menu-field input[type="date"] {
+  width: 100%;
+  height: 44px;
+  padding: 0 13px;
+  background: #ffffff;
+  color: #263a2d;
+  border: 1px solid #cfdacf;
+  border-radius: 8px;
+  outline: none;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.daily-menu-field input[type="text"]:focus,
+.daily-menu-field input[type="date"]:focus {
+  border-color: #2d7037;
+  box-shadow: 0 0 0 3px rgba(45, 112, 55, 0.1);
+}
+
+.daily-menu-field input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  background: #f8faf7;
+  border: 1px dashed #b9cbb8;
+  border-radius: 8px;
+  color: #536058;
+  box-sizing: border-box;
+}
+
+.daily-menu-field small {
+  color: #7b857e;
+  font-size: 11px;
+}
+
+/* =====================================================
+   IMAGE PREVIEW
+===================================================== */
+
+.daily-menu-preview {
+  padding: 16px;
+  background: #f8faf7;
+  border: 1px solid #dce8d6;
+  border-radius: 10px;
+}
+
+.daily-menu-preview-label {
+  display: block;
+  margin-bottom: 10px;
+  color: #2d7037;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.daily-menu-preview-frame {
+  width: 100%;
+  max-height: 430px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e0e7de;
+  border-radius: 8px;
+}
+
+.daily-menu-preview-frame img {
+  width: 100%;
+  max-height: 430px;
+  display: block;
+  object-fit: contain;
+}
+
+/* =====================================================
+   EXISTING MENU
+===================================================== */
+
+.daily-menu-existing {
+  padding: 14px 16px;
+  background: #f3f8ef;
+  border-left: 4px solid #2d7037;
+  border-radius: 6px;
+}
+
+.daily-menu-existing div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.daily-menu-existing span {
+  color: #647067;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.daily-menu-existing strong {
+  color: #174a2b;
+  font-size: 13px;
+  word-break: break-word;
+}
+
+.daily-menu-existing p {
+  margin: 8px 0 0;
+  color: #69736c;
+  font-size: 12px;
+}
+
+/* =====================================================
+   SUBMIT BUTTON
+===================================================== */
+
+.daily-menu-submit {
+  width: fit-content;
+  min-width: 150px;
+  min-height: 44px;
+  padding: 10px 20px;
+  background: #2d7037;
+  color: #ffffff;
+  border: 0;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.daily-menu-submit:hover:not(:disabled) {
+  background: #1f5d30;
+  transform: translateY(-1px);
+}
+
+.daily-menu-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =====================================================
+   RECENT MENU LIST
+===================================================== */
+
+.daily-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.daily-menu-history-row {
+  width: 100%;
+  padding: 13px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  background: #ffffff;
+  color: inherit;
+  border: 1px solid #e0e7de;
+  border-radius: 9px;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.daily-menu-history-row:hover {
+  background: #f7faf5;
+  border-color: #b9cdb7;
+}
+
+.daily-menu-history-row.active {
+  background: #f0f7ec;
+  border-color: #2d7037;
+}
+
+.daily-menu-history-date {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.daily-menu-history-date strong {
+  color: #263a2d;
+  font-size: 13px;
+}
+
+.daily-menu-history-date span {
+  overflow: hidden;
+  color: #6b756d;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.daily-menu-history-info {
+  min-width: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+.daily-menu-history-info > span {
+  max-width: 150px;
+  overflow: hidden;
+  color: #6b756d;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.daily-menu-history-info small {
+  color: #2d7037;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.daily-menu-empty {
+  padding: 36px 15px;
+  background: #f8faf7;
+  color: #778078;
+  border: 1px dashed #d6e1d3;
+  border-radius: 9px;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1000px) {
+  .daily-menu-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .daily-menu-page {
+    padding: 20px 16px;
+  }
+
+  .daily-menu-header h1 {
+    font-size: 25px;
+  }
+
+  .daily-menu-form-card,
+  .daily-menu-history-card {
+    padding: 19px;
+  }
+
+  .daily-menu-card-heading {
+    gap: 10px;
+  }
+
+  .daily-menu-card-heading h2 {
+    font-size: 18px;
+  }
+
+  .daily-menu-history-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .daily-menu-history-info {
+    min-width: 0;
+    align-items: flex-start;
+  }
+
+  .daily-menu-submit {
+    width: 100%;
+  }
+}
