@@ -48,7 +48,7 @@ export default function AdminAuthGuard({
 
   useEffect(() => {
     // Login page is public
-    if (pathname === "/admin/login") {
+    if (pathname === "/admin/login" || pathname === "/admin/login/") {
       setLoading(false);
       return;
     }
@@ -89,7 +89,7 @@ export default function AdminAuthGuard({
   }, [pathname, router]);
 
   // Login page does not require authentication
-  if (pathname === "/admin/login") {
+  if (pathname === "/admin/login" || pathname === "/admin/login/") {
     return <>{children}</>;
   }
 

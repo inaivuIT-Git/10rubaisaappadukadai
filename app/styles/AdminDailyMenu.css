@@ -4,447 +4,519 @@
 
 .daily-menu-page {
   width: 100%;
-  min-height: 100vh;
-  padding: 30px;
-  background: #f4f7f3;
-  box-sizing: border-box;
+  max-width: 1180px;
+  margin: 0 auto;
 }
+
 
 /* =====================================================
    PAGE HEADER
 ===================================================== */
 
 .daily-menu-header {
-  margin-bottom: 26px;
+  margin-bottom: 28px;
 }
 
 .daily-menu-eyebrow {
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+
   color: #2d7037;
+
   font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 1px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
 }
 
 .daily-menu-header h1 {
   margin: 0;
-  color: #174a2b;
-  font-size: 30px;
+
+  color: #1f5d30;
+
+  font-size: 34px;
   font-weight: 700;
+  line-height: 1.2;
 }
 
 .daily-menu-header p {
-  max-width: 680px;
-  margin: 7px 0 0;
-  color: #647067;
-  font-size: 14px;
-  line-height: 1.6;
+  max-width: 720px;
+  margin: 12px 0 0;
+
+  color: #68736b;
+
+  font-size: 15px;
+  line-height: 1.7;
 }
 
-/* =====================================================
-   TWO COLUMN LAYOUT
-===================================================== */
-
-.daily-menu-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
-  gap: 24px;
-  align-items: start;
-}
 
 /* =====================================================
-   CARDS
+   UPLOAD CARD
 ===================================================== */
 
-.daily-menu-form-card,
-.daily-menu-history-card {
-  padding: 26px;
+.daily-menu-card {
+  margin-bottom: 28px;
+  padding: 28px;
+
   background: #ffffff;
+
   border: 1px solid #dce8d6;
   border-radius: 14px;
-  box-shadow: 0 4px 16px rgba(23, 74, 43, 0.06);
+
+  box-shadow:
+    0 4px 18px rgba(31, 93, 48, 0.06);
 }
 
-.daily-menu-card-heading {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 18px;
+.daily-menu-card-header {
   margin-bottom: 24px;
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid #edf2e9;
 }
 
-.daily-menu-card-heading h2 {
+.daily-menu-card-header h2 {
   margin: 0;
-  color: #174a2b;
+
+  color: #173f2b;
+
   font-size: 20px;
   font-weight: 700;
 }
 
-.daily-menu-card-heading p {
-  margin: 5px 0 0;
-  color: #6b756d;
-  font-size: 13px;
+.daily-menu-card-header p {
+  margin: 6px 0 0;
+
+  color: #738078;
+
+  font-size: 14px;
 }
 
-/* =====================================================
-   STATUS / COUNT
-===================================================== */
-
-.daily-menu-status {
-  flex-shrink: 0;
-  padding: 6px 11px;
-  background: #eaf5e5;
-  color: #2d7037;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.daily-menu-count {
-  min-width: 34px;
-  height: 34px;
-  padding: 0 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #eaf5e5;
-  color: #2d7037;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 800;
-}
-
-/* =====================================================
-   MESSAGES
-===================================================== */
-
-.daily-menu-message {
-  margin-bottom: 20px;
-  padding: 12px 14px;
-  border-radius: 8px;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.daily-menu-message.success {
-  background: #edf8ed;
-  color: #24642e;
-  border: 1px solid #cfe5cf;
-}
-
-.daily-menu-message.error {
-  background: #fff1f1;
-  color: #a13434;
-  border: 1px solid #efcccc;
-}
 
 /* =====================================================
    FORM
 ===================================================== */
 
 .daily-menu-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 22px;
 }
+
+
+/* =====================================================
+   FORM FIELD
+===================================================== */
 
 .daily-menu-field {
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 8px;
 }
 
 .daily-menu-field label {
-  color: #33463a;
-  font-size: 13px;
+  color: #243d2d;
+
+  font-size: 14px;
   font-weight: 700;
 }
 
-.daily-menu-field label span {
-  margin-left: 3px;
-  color: #b42318;
-}
-
-.daily-menu-field input[type="text"],
 .daily-menu-field input[type="date"] {
   width: 100%;
-  height: 44px;
-  padding: 0 13px;
+  height: 48px;
+
+  padding: 0 14px;
+
   background: #ffffff;
-  color: #263a2d;
-  border: 1px solid #cfdacf;
+  color: #263d2e;
+
+  border: 1px solid #cfdccf;
   border-radius: 8px;
+
   outline: none;
-  box-sizing: border-box;
+
+  font-size: 15px;
+
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease;
 }
 
-.daily-menu-field input[type="text"]:focus,
 .daily-menu-field input[type="date"]:focus {
   border-color: #2d7037;
-  box-shadow: 0 0 0 3px rgba(45, 112, 55, 0.1);
+
+  box-shadow:
+    0 0 0 3px rgba(45, 112, 55, 0.1);
 }
+
+
+/* =====================================================
+   FILE INPUT
+===================================================== */
 
 .daily-menu-field input[type="file"] {
   width: 100%;
+
   padding: 10px;
-  background: #f8faf7;
-  border: 1px dashed #b9cbb8;
-  border-radius: 8px;
-  color: #536058;
-  box-sizing: border-box;
+
+  background: #f9fcf8;
+
+  color: #536158;
+
+  border: 1px dashed #aac5aa;
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  font-size: 14px;
 }
 
-.daily-menu-field small {
-  color: #7b857e;
-  font-size: 11px;
+.daily-menu-field input[type="file"]::file-selector-button {
+  margin-right: 12px;
+  padding: 9px 15px;
+
+  background: #eaf5e5;
+  color: #1f5d30;
+
+  border: 0;
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  font-weight: 700;
 }
+
+.daily-menu-field input[type="file"]::file-selector-button:hover {
+  background: #dcefd7;
+}
+
+
+/* =====================================================
+   HELP / EXISTING MENU
+===================================================== */
+
+.daily-menu-help {
+  color: #7b877f;
+
+  font-size: 13px;
+}
+
+.daily-menu-existing {
+  padding: 11px 13px;
+
+  background: #fff8e5;
+  color: #765b12;
+
+  border: 1px solid #f1dfac;
+  border-radius: 7px;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
 
 /* =====================================================
    IMAGE PREVIEW
 ===================================================== */
 
 .daily-menu-preview {
-  padding: 16px;
-  background: #f8faf7;
+  padding: 18px;
+
+  background: #f7faf5;
+
   border: 1px solid #dce8d6;
   border-radius: 10px;
 }
 
-.daily-menu-preview-label {
+.daily-menu-preview-title {
   display: block;
-  margin-bottom: 10px;
-  color: #2d7037;
-  font-size: 12px;
+
+  margin-bottom: 12px;
+
+  color: #294b33;
+
+  font-size: 13px;
   font-weight: 700;
 }
 
-.daily-menu-preview-frame {
-  width: 100%;
-  max-height: 430px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: #ffffff;
-  border: 1px solid #e0e7de;
-  border-radius: 8px;
-}
+.daily-menu-preview img {
+  width: auto;
+  max-width: 100%;
+  max-height: 420px;
 
-.daily-menu-preview-frame img {
-  width: 100%;
-  max-height: 430px;
-  display: block;
+  margin: 0 auto;
+
   object-fit: contain;
-}
 
-/* =====================================================
-   EXISTING MENU
-===================================================== */
-
-.daily-menu-existing {
-  padding: 14px 16px;
-  background: #f3f8ef;
-  border-left: 4px solid #2d7037;
-  border-radius: 6px;
-}
-
-.daily-menu-existing div {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.daily-menu-existing span {
-  color: #647067;
-  font-size: 11px;
-  font-weight: 600;
-}
-
-.daily-menu-existing strong {
-  color: #174a2b;
-  font-size: 13px;
-  word-break: break-word;
-}
-
-.daily-menu-existing p {
-  margin: 8px 0 0;
-  color: #69736c;
-  font-size: 12px;
-}
-
-/* =====================================================
-   SUBMIT BUTTON
-===================================================== */
-
-.daily-menu-submit {
-  width: fit-content;
-  min-width: 150px;
-  min-height: 44px;
-  padding: 10px 20px;
-  background: #2d7037;
-  color: #ffffff;
-  border: 0;
   border-radius: 8px;
-  font-size: 13px;
-  font-weight: 700;
+
+  box-shadow:
+    0 3px 14px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =====================================================
+   MESSAGES
+===================================================== */
+
+.daily-menu-error,
+.daily-menu-success {
+  padding: 12px 14px;
+
+  border-radius: 7px;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.daily-menu-error {
+  background: #fef2f2;
+  color: #b42318;
+
+  border: 1px solid #fecaca;
+}
+
+.daily-menu-success {
+  background: #edf8ea;
+  color: #236132;
+
+  border: 1px solid #cce7c7;
+}
+
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.daily-menu-actions {
+  display: flex;
+  justify-content: flex-end;
+
+  padding-top: 4px;
+}
+
+.daily-menu-save-button {
+  min-width: 150px;
+  height: 46px;
+
+  padding: 0 24px;
+
+  background: #1f5d30;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 8px;
+
   cursor: pointer;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  box-shadow:
+    0 3px 10px rgba(31, 93, 48, 0.16);
+
   transition:
     background 0.2s ease,
-    transform 0.2s ease;
+    transform 0.1s ease,
+    box-shadow 0.2s ease;
 }
 
-.daily-menu-submit:hover:not(:disabled) {
-  background: #1f5d30;
-  transform: translateY(-1px);
+.daily-menu-save-button:hover:not(:disabled) {
+  background: #174a2b;
+
+  box-shadow:
+    0 5px 14px rgba(31, 93, 48, 0.2);
 }
 
-.daily-menu-submit:disabled {
+.daily-menu-save-button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.daily-menu-save-button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
+
 /* =====================================================
-   RECENT MENU LIST
+   SCHEDULED MENUS
 ===================================================== */
 
-.daily-menu-list {
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-}
+.daily-menu-history {
+  overflow: hidden;
 
-.daily-menu-history-row {
-  width: 100%;
-  padding: 13px 14px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
   background: #ffffff;
-  color: inherit;
-  border: 1px solid #e0e7de;
-  border-radius: 9px;
-  text-align: left;
-  cursor: pointer;
-  transition:
-    border-color 0.2s ease,
-    background 0.2s ease;
+
+  border: 1px solid #dce8d6;
+  border-radius: 14px;
+
+  box-shadow:
+    0 4px 18px rgba(31, 93, 48, 0.05);
 }
 
-.daily-menu-history-row:hover {
-  background: #f7faf5;
-  border-color: #b9cdb7;
+.daily-menu-history-header {
+  padding: 22px 26px;
+
+  border-bottom: 1px solid #edf2e9;
 }
 
-.daily-menu-history-row.active {
-  background: #f0f7ec;
-  border-color: #2d7037;
+.daily-menu-history-header h2 {
+  margin: 0;
+
+  color: #173f2b;
+
+  font-size: 19px;
+  font-weight: 700;
 }
 
-.daily-menu-history-date {
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
+.daily-menu-history-header p {
+  margin: 5px 0 0;
 
-.daily-menu-history-date strong {
-  color: #263a2d;
+  color: #778279;
+
   font-size: 13px;
 }
 
-.daily-menu-history-date span {
-  overflow: hidden;
-  color: #6b756d;
-  font-size: 11px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.daily-menu-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
 }
 
-.daily-menu-history-info {
-  min-width: 110px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 3px;
+.daily-menu-table {
+  width: 100%;
+
+  border-collapse: collapse;
 }
 
-.daily-menu-history-info > span {
-  max-width: 150px;
-  overflow: hidden;
-  color: #6b756d;
-  font-size: 10px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.daily-menu-table th {
+  padding: 13px 20px;
+
+  background: #f5f9f3;
+  color: #53645a;
+
+  border-bottom: 1px solid #e4ece0;
+
+  text-align: left;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
 }
 
-.daily-menu-history-info small {
-  color: #2d7037;
-  font-size: 10px;
+.daily-menu-table td {
+  padding: 16px 20px;
+
+  color: #435148;
+
+  border-bottom: 1px solid #edf1eb;
+
+  font-size: 14px;
+}
+
+.daily-menu-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.daily-menu-table tbody tr:hover {
+  background: #fbfdf9;
+}
+
+.daily-menu-table td strong {
+  color: #243d2d;
+
   font-weight: 700;
 }
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.daily-menu-status {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 10px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.daily-menu-status.active {
+  background: #e6f4e2;
+  color: #277039;
+}
+
+.daily-menu-status.inactive {
+  background: #f1f3f1;
+  color: #6b756e;
+}
+
 
 /* =====================================================
    EMPTY STATE
 ===================================================== */
 
 .daily-menu-empty {
-  padding: 36px 15px;
-  background: #f8faf7;
-  color: #778078;
-  border: 1px dashed #d6e1d3;
-  border-radius: 9px;
-  font-size: 13px;
+  padding: 34px 26px;
+
+  color: #7a857d;
+
   text-align: center;
+
+  font-size: 14px;
 }
+
 
 /* =====================================================
    RESPONSIVE
 ===================================================== */
 
-@media (max-width: 1000px) {
-  .daily-menu-layout {
-    grid-template-columns: 1fr;
+@media (max-width: 900px) {
+  .daily-menu-header h1 {
+    font-size: 30px;
+  }
+
+  .daily-menu-card {
+    padding: 22px;
   }
 }
 
 @media (max-width: 640px) {
-  .daily-menu-page {
-    padding: 20px 16px;
+  .daily-menu-header {
+    margin-bottom: 22px;
   }
 
   .daily-menu-header h1 {
-    font-size: 25px;
+    font-size: 27px;
   }
 
-  .daily-menu-form-card,
-  .daily-menu-history-card {
-    padding: 19px;
+  .daily-menu-card {
+    padding: 18px;
+
+    border-radius: 10px;
   }
 
-  .daily-menu-card-heading {
-    gap: 10px;
+  .daily-menu-actions {
+    justify-content: stretch;
   }
 
-  .daily-menu-card-heading h2 {
-    font-size: 18px;
-  }
-
-  .daily-menu-history-row {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .daily-menu-history-info {
-    min-width: 0;
-    align-items: flex-start;
-  }
-
-  .daily-menu-submit {
+  .daily-menu-save-button {
     width: 100%;
+  }
+
+  .daily-menu-history {
+    border-radius: 10px;
+  }
+
+  .daily-menu-table th,
+  .daily-menu-table td {
+    padding: 13px 14px;
   }
 }
