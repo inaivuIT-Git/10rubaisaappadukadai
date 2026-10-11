@@ -97,7 +97,7 @@ export default function LocationSection() {
 
                 <h4>தொடர்பு</h4>
 
-                <a href="tel:+919087737879">+91 90877 37879</a>
+                <a href="tel:+919087737879">+91 90878 73789</a>
               </div>
             </div>
           </div>

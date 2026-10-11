@@ -130,8 +130,8 @@ export default function Footer() {
                   📞
                 </div>
 
-                <a href="tel:+919087737879">
-                  +91 90877 37879
+                <a href="tel:+919087873789">
+                  +91 90878 73789
                 </a>
 
               </div>

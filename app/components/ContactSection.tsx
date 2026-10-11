@@ -82,7 +82,7 @@ export default function ContactSection() {
           ================================================= */}
 
           <a
-            href="tel:+919087737879"
+            href="tel:+919087873789"
             className="contact-phone"
           >
             <span className="contact-action-icon">
@@ -95,7 +95,7 @@ export default function ContactSection() {
               </small>
 
               <strong>
-                +91 90877 37879
+                +91 90878 73789
               </strong>
             </span>
           </a>
@@ -106,7 +106,7 @@ export default function ContactSection() {
           ================================================= */}
 
           <a
-            href="https://wa.me/919087737879"
+            href="https://wa.me/919087873789"
             target="_blank"
             rel="noreferrer"
             className="contact-whatsapp"
